@@ -1,108 +1,314 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Coached by Caoimhe
 
-Welcome USER_NAME,
+[Visit the live site here!](https://coach-me.herokuapp.com/)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+![Site preview](https://coach-me.herokuapp.com/static/media/coach-me-logo.png)
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+## Table of Contents
 
-## Gitpod Reminders
+1. [Overview](#overview)
+2. [UX](#ux)
+   - [Strategy](#strategy)
+     - [Target Audience](#target-audience)
+     - [Business Goals](#business-goals)
+     - [User Stories](#user-stories)
+   - [Scope](#scope)
+   - [Structure](#structure)
+   - [Wireframes](#wireframes)
+   - [Surface](#surface)
+     - [Typography](#typography)
+     - [Colours](#colours)
+     - [Images](#images)
+3. [Features](#features)
+   - [Current Features](#current-features)
+   - [Future Features](#future-features)
+4. [Tech Used](#tech-used)
+   - [Languages](#languages)
+   - [Frameworks & Libraries](#frameworks-libraries)
+5. [Testing](#testing)
+6. [Deployment](#deployment)
+   - [Heroku](#heroku)
+   - [AWS](#aws)
+7. [Credits](#credits)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## Overview
 
-`python3 -m http.server`
+Coached by Caoimhe is a web application that allows users to buy workout plans and be coached online and/or in person by a qualified personal trainer. This site you can find all the different workout plans and their details.
 
-A blue button should appear to click: _Make Public_,
+## UX
 
-Another blue button should appear to click: _Open Browser_.
-
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
-------
-
-## Release History
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
-
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+### Strategy
 
 ---
 
-Happy coding!
+#### Target Audience
+
+The target audience for this site are for people who want to be able to buy workout plans and be coached online and/or in person by a qualified personal trainer. Although this site targets a wide range of people its steered towards women who are looking to get back into shape post-pregnancy or maintain a great physique.
+
+#### Business Goals
+
+- To provide a navigable site that can entice users to sign up for coaching.
+- Connect with users via social media and through subscriptions.
+- Provide a way for users to buy workout plans and be coached online and/or in person by a qualified personal trainer.
+
+#### User Stories
+
+##### As a first time user, I want
+
+- To easily understand the site and its features.
+- To see clearly what the site has to offer.
+- To be able to buy workout plans and be coached online and/or in person by a qualified personal trainer.
+- Create an account and sign in to access the site.
+- Know about the personal trainer and their qualifications.
+- To easily find the contact information of the personal trainer.
+
+##### As a recurring user, I want all of the above and
+
+- To log in and sign up for coaching.
+- To login in and check my profile.
+- To have all my personal data stored.
+- To have my workout plans stored.
+- To have a secure way to pay for my workout plans.
+- to receive a confirmation email when I buy a workout plan.
+- To subscribe to the site and receive an email with the workout plan or information.
+- To reach read the coaches blog.
+
+##### As the Admin/Site owner, I want
+
+- To be able to add new workout plans.
+- To be able to edit existing workout plans.
+- To be able to delete existing workout plans.
+- To add questionaries to workout plans.
+- To update blog posts.
+
+---
+
+### Scope
+
+The following features are must have for this site to function, and are correlated to the user stories above.
+Any features that are not included are optional and can be added later. Please check [Features](#features) to see a full list of current and future features.
+
+- Clear and fully responsive design.
+- Secure payment method.
+- Secure authentication.
+- User sign up and login.
+- User profile.
+- User workout plans.
+- Full admin access.
+- Error pages. (404, 500, etc.)
+
+---
+
+### Structure
+
+Below is a description of the structure of the site.
+
+#### Home App
+
+**HTML**
+
+index.html
+
+#### Plans App
+
+**HTML**
+
+**Models**
+
+#### Checkout App
+
+**HTML**
+
+**Models**
+
+#### Profiles App
+
+**HTML**
+
+**Models**
+
+#### Contact App
+
+**HTML**
+
+**Models**
+
+#### Blog App
+
+**HTML**
+
+**Models**
+
+#### Subscribe App
+
+**HTML**
+
+**Models**
+
+---
+
+### Wireframes
+
+<details>
+<summary>Home</summary>
+</details>
+
+<details>
+<summary>Workout Plans</summary>
+</details>
+
+<details>
+<summary>Workout Plans Details</summary>
+</details>
+
+<details>
+<summary>Checkout</summary>
+</details>
+
+<details>
+<summary>Sign Up</summary>
+</details>
+
+<details>
+<summary>Sign In</summary>
+</details>
+
+<details>
+<summary>Profile</summary>
+</details>
+
+<details>
+<summary>Workout Plan Management</summary>
+</details>
+
+<details>
+<summary>Contact Us</summary>
+</details>
+
+<details>
+<summary>Error pages</summary>
+</details>
+
+---
+
+### Surface
+
+#### Colours
+
+The colours used primarily in the site are:
+
+![Colours](https://coach-me.herokuapp.com/static/media/colours.png)
+
+#### Typography
+
+I used the following fonts:
+
+#### Images
+
+The imagery used throughout the site is allows the use to quickly identify and understand the site. I chose aesthetic imagery to help persuade the user into signing up for coaching.
+
+---
+
+## Features
+
+### Current Features
+
+### Future Features
+
+## Tech Used
+
+### Languages
+
+- [HTML5](https://html.com/html5/)
+- [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS)
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [Python](https://www.python.org/)
+
+### Frameworks & Libraries
+
+- [Django](https://www.djangoproject.com/) - Used for the main framework for this site.
+- [Bootstrap](https://getbootstrap.com/) - Used for the styling of the site.
+- [Google Fonts](https://fonts.google.com/) - Used for the typography of the site.
+- [Font Awesome](https://fontawesome.com/) - Used for the icons of the site.
+- [SQLite3](https://www.sqlite.org/)n - Used for the development database of the site.
+- [PostgreSQL](https://www.postgresql.org/) - Used for the Deployed database of the site.
+- [Heroku](https://www.heroku.com/) - Used for the deployment of the site.
+- [AWS](https://aws.amazon.com/) - Used for hosting images and static files.
+- [VS Code](https://code.visualstudio.com/) - IDE used for the development of the site.
+- [Git](https://git-scm.com/) - Used for the version control of the site.
+- [GitHub](https://github.com/) - Used for storing the project files.
+- [Balsamiq](https://www.balsamiq.com/) - Used for the wireframes.
+
+## Testing
+
+Find all the testing documentations [**here!**](TESTING.md)
+
+## Deployment
+
+Below describes the deployment of the site on Heroku and set up process to store static files and images on AWS.
+
+### Heroku
+
+- Go to [Heroku](https://www.heroku.com/)
+
+- Create an account or log in if you already have an account.
+
+- Create a new app and give it a unique name in only lowercase letters and numbers.
+
+- Choose the nearest region to your location and click on "Create App".
+
+- When the app has be created, click on the "Resources" tab to add the postgres database. Type in "Heroku Postgres" and select it
+  _*This will create a DATABASE_URL in the Config Vars (which can be found in settings)*_
+
+- Click on the "Deployment" tab.
+
+- Select the option to "GitHub" and search for the project.
+
+- Click on "Connect and enable automatic deployments"
+
+- Move back to your IDE and `pip install dj_database_url` and `psycopg2-binary` to be able to use the postgres database.
+
+- In the `settings.py` file, add the following lines:
+
+```
+DATABASES = {
+    "default": dj_database_url.parse("database_url")
+}
+```
+
+- Comment out the existing sqlite3 database.
+  **PLEASE NOTE: Before committing and pushing to GitHub make sure to uncomment your sqlite3 to ensure this piece of code isn't committed to GitHub**
+
+- Login to Heroku using the command line by typing `heroku login -i`
+
+- Once logged in you will need migrate the models to the postgres database.
+
+- Run the following command in the terminal:
+
+  - `heroku run python manage.py makemigrations --dry-run` to see what changes will be made to the database.
+
+  - `heroku run python manage.py makemigrations` to actually make the changes to the database.
+
+  - `heroku run python manage.py migrate --plan` to see what will be migrated.
+
+  - `heroku run python manage.py migrate` to actually migrate the database.
+
+- You will now need to create a superuser to access the admin side of the site.
+
+  - `heroku run python manage.py createsuperuser`
+
+- Install the `gunicorn` package by typing `pip install gunicorn`
+
+- Now you can create your requirements.txt file by typing `pip freeze > requirements.txt`
+
+- Create a `Procfile` file by typing `touch Procfile`
+
+## Credits
+
+### Code
+
+- How to add dropdown content in markdown was found [here](https://dev.to/asyraf/how-to-add-dropdown-in-markdown-o78).
+
+### Images
+
+## Acknowledgements
