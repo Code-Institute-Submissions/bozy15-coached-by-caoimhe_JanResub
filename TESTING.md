@@ -1,6 +1,6 @@
 # Coached by Caoimhe Testing
 
-This is the documentation for the testing file. If you would like to the view the README.md click **[here!]**(README.md)
+This is the documentation for the testing file. If you would like to the view the README.md click **[here!](README.md)**
 
 ## Table of Contents
 
