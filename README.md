@@ -166,6 +166,10 @@ index.html
 </details>
 
 <details>
+<summary>Checkout Success</summary>
+</details>
+
+<details>
 <summary>Sign Up</summary>
 </details>
 
