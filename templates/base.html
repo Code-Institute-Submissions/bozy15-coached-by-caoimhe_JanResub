@@ -47,7 +47,71 @@
 
 <body>
     <!-- Page header -->
-    <header class="container-fluid fixed-top"></header>
+    <header class="container-fluid fixed-top">
+        <div class="row">
+            <!-- Site logo name -->
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
+                <a class="nav-link" href="{% url 'home' %}">
+                    <h2 class="site-logo-font my-0"><span>Coached<br>By<br>Caoimhe</span></h2>
+                </a>
+            </div>
+            <!-- END logo name -->
+            <!-- Search bar -->
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+                <form class="form-inline my-2 my-lg-0" action="" method="GET">
+                    <div class="input-group w-100">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="q">
+                        <button class="btn btn-outline-success ms-2 my-sm-0" type="submit">
+                            <span class="icon">
+                                <i class="fas fa-search"></i>
+                            </span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <!-- END search bar -->
+            <!-- Account/login and Checkout -->
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+                <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+                    <li class="list-inline-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            <div class="text-center">
+                                <div><i class="fas fa-user fa-lg"></i></div>
+                                <p class="my-0">My Account</p>
+                            </div>
+                        </a>
+                        <div class="dropdown" aria-labelledby="user-options">
+                            <!-- if user is authenticated display options -->
+                            {% if request.user.is_authenticated %}
+                                <!-- if user is admin, display plan management -->
+                                {% if request.user.is_superuser %}
+                                    <a class="dropdown-item" href="">
+                                        Product Management
+                                    </a>
+                                {% endif %}
+                                <a href="" class="dropdown-item">My Profile</a>
+                                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                            {% else %}
+                                <!-- if user is not authenticated -->
+                                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                            {% endif %}
+                        </div>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="nav-link" href="">
+                            <div class="text-center">
+                                <div><i class="fas fa-shopping-cart fa-lg"></i></div>
+                                <p class="my-0">Cart</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- END Account/login and Checkout -->
+        </div>
+    </header>
     <!-- END Page header -->
 
     <!-- Display messages -->
