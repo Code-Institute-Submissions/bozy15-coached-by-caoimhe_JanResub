@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     "django.contrib.sites",
     "allauth",
     "allauth.account",  # Allows basic account management
-    "allauth.socialaccount",  # Allows logging in through social accounts
+    "allauth.socialaccount",  # Allows logging in through social accounts,
+    "home",
 ]
 
 MIDDLEWARE = [
@@ -59,7 +60,12 @@ ROOT_URLCONF = "coached_by_caoimhe.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [
+            # Root template directory
+            os.path.join(BASE_DIR, "templates"),
+            # Custom allauth directory
+            os.path.join(BASE_DIR, "templates", "allauth"),
+        ],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
