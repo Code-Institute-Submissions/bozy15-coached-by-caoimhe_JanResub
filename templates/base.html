@@ -70,30 +70,27 @@
                 </form>
             </div>
             <!-- END search bar -->
-            <!-- Account/login and Checkout -->
+            <!-- Account dropdown and checkout -->
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-                <ul class="list-inline list-unstyled text-center text-lg-right my-0">
-                    <li class="list-inline-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
+                <ul class="list-inline list-unstyled text-center text-lg-right">
+                    <li class="dropdown list-inline-item">
+                        <a class="nav-link" href="#" id="account-options" data-bs-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
                             <div class="text-center">
                                 <div><i class="fas fa-user fa-lg"></i></div>
-                                <p class="my-0">My Account</p>
-                            </div>
+                                <p class="my-0">Account</p>
+                            </div>                   
                         </a>
-                        <div class="dropdown" aria-labelledby="user-options">
-                            <!-- if user is authenticated display options -->
+                        <div class="dropdown-menu border-3" aria-labelledby="account-options">
+                            <!-- if user is authenticated, then display -->
                             {% if request.user.is_authenticated %}
-                                <!-- if user is admin, display plan management -->
+                                <!-- if user is admin, display -->
                                 {% if request.user.is_superuser %}
-                                    <a class="dropdown-item" href="">
-                                        Product Management
-                                    </a>
+                                    <a href="" class="dropdown-item">Plan Management</a>
                                 {% endif %}
                                 <a href="" class="dropdown-item">My Profile</a>
                                 <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                             {% else %}
-                                <!-- if user is not authenticated -->
                                 <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
                                 <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
                             {% endif %}
@@ -103,7 +100,7 @@
                         <a class="nav-link" href="">
                             <div class="text-center">
                                 <div><i class="fas fa-shopping-cart fa-lg"></i></div>
-                                <p class="my-0">Cart</p>
+                                <p class="my-0">Checkout</p>
                             </div>
                         </a>
                     </li>
