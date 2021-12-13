@@ -313,6 +313,10 @@ DATABASES = {
 
 - How to add dropdown content in markdown was found [here](https://dev.to/asyraf/how-to-add-dropdown-in-markdown-o78).
 
-### Images
+### Image
+
+- The website used to remove the background of an image was found [here](https://www.remove.bg/)
+
+- The image used for the landing page was found [here](https://www.freepik.com/free-photo/young-beautiful-woman-bright-sportwear-isolated-gradient-pink-blue-background-neon-light_11689908.htm)
 
 ## Acknowledgements

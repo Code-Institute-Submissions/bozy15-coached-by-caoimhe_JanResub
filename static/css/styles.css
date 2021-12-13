@@ -1,0 +1,266 @@
+/* Google Fonts: https://fonts.google.com/ */
+@import url("https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=Lato:ital@1&family=Playfair+Display:ital,wght@0,500;0,600;1,400&display=swap");
+
+:root {
+  /* Colours */
+  --font-colour: #fff;
+  --pink-lavender: #cdb4dbff;
+  --orchid-pink: #ffc8ddff;
+  --nadeshiko-pink: #ffafccff;
+  --uranian-blue: #bde0feff;
+  --baby-blue-eyes: #a2d2ffff;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%; /* Allows the h-100 and vertical centering to work */
+  scroll-behavior: smooth;
+}
+
+body {
+  background: url(/media/homepage-img.jpg) no-repeat center center / cover fixed;
+  height: calc(100vh - 10.25rem);
+  color: var(--font-colour);
+  font-family: "Lato", sans-serif;
+}
+
+/* ---- CUSTOM CSS CLASSES ---- */
+
+/* From Boutique Ado */
+/* Makes sure icons stay centered */
+.icon {
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+/* Custom text shadow class */
+.txt-shadow {
+  text-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.5);
+}
+/* ---- END CUSTOM CSS CLASSES ---- */
+
+/* Navbar CSS */
+.nav-bg-color {
+  background-color: rgba(252, 237, 151, 0.603);
+}
+
+.site-logo-link {
+  width: fit-content;
+}
+
+.site-logo-colour {
+  color: var(--font-colour);
+  text-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.5);
+}
+
+.logo-font-family {
+  /* Styles the "coached by part of logo" */
+  font-family: Corinthia;
+  font-size: 3rem;
+}
+
+.logo-coach-name {
+  /* Styles the "caoimhe part of logo" */
+  font-family: Playfair Display;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.form-control {
+  box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.5);
+}
+
+.btn-landing-page {
+  background-color: var(--nadeshiko-pink);
+  border-color: var(--uranian-blue);
+  color: var(--font-colour);
+  text-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.5);
+}
+
+.btn-landing-page:hover {
+  background-color: var(--uranian-blue);
+  border-color: var(--uranian-blue);
+  color: var(--font-colour);
+  text-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.5);
+}
+
+.nav-link {
+  color: var(--font-colour);
+  text-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.5);
+}
+
+.nav-link:hover {
+  color: var(--uranian-blue);
+}
+
+/* END NAVBAR CSS */
+
+/* Landing page CSS */
+.container-position {
+  position: relative;
+  right: -4rem;
+}
+/* END Landing page CSS */
+
+/* Footer CSS */
+footer.footer {
+  background: linear-gradient(
+    to top,
+    rgba(241, 125, 144, 0.76),
+    rgba(83, 147, 243, 0.733)
+  );
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+  color: var(--font-colour);
+  text-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.5);
+  padding-top: 4.25rem;
+}
+
+.footer-text {
+  font-family: "Lato," sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  font-weight: 300;
+  margin: 0 0 1.95rem 0;
+}
+
+.logo-coach-name-footer {
+  font-family: Playfair Display;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin-top: -1.1rem;
+}
+
+a.footer-anchor {
+  text-decoration: none;
+  color: var(--font-colour);
+}
+
+.footer-anchor:hover,
+.footer-anchor:focus {
+  text-decoration: none;
+  outline: none;
+  color: var(--orchid-pink);
+}
+
+.footer-anchor.dev-name:hover {
+  /* Changes the color on hover to blue to increase contrast */
+  color: var(--baby-blue-eyes);
+}
+
+.about-footer .logo-footer {
+  margin-bottom: 1.9rem;
+}
+
+.footer-links {
+  margin-bottom: 1.9rem;
+}
+
+.footer-links ul {
+  color: var(--font-colour);
+}
+
+a .fab.fa-instagram {
+  color: var(--font-colour);
+  font-size: 2rem;
+}
+
+i.fab.fa-instagram:hover,
+i.fab.fa-instagram:focus {
+  color: var(--orchid-pink);
+}
+
+.footer-links h5 {
+  font-family: "Playfair Display", serif;
+  color: #fafafa;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1.3rem;
+  text-decoration: underline;
+}
+
+.footer-links ul li {
+  line-height: 2rem;
+  list-style: none;
+}
+
+.footer-links > .footer-subscribe form {
+  position: relative;
+}
+
+.footer-links > .footer-subscribe form input {
+  width: 100%;
+  font-size: 0.95rem;
+  background: #fafafa49;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.2rem 0;
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.5);
+  padding-left: 0.75rem; /* Moves placeholder text to the right */
+}
+
+.footer-links > .footer-subscribe form input::placeholder {
+  color: var(--font-colour);
+  text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.5);
+  padding-left: 0.25rem;
+}
+
+.footer-links > .footer-subscribe form button {
+  color: var(--font-colour);
+  font-size: 1rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  background: var(--uranian-blue);
+  border: none;
+  border-radius: 0.25rem;
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.5);
+}
+
+.footer-links > .footer-subscribe form button:hover,
+.footer-links > .footer-subscribe form button:focus {
+  color: var(--uranian-blue);
+  background: var(--font-colour);
+}
+/* End Footer CSS */
+
+/* ------------- Media Queries */
+
+/* Larger container on XL screens */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 80%;
+  }
+}
+
+/* Fixed top navbar only displayed on medium and larger screens */
+@media (min-width: 992px) {
+  .desktop-only {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+
+  .header-container {
+    padding-top: 10.25rem;
+  }
+}
