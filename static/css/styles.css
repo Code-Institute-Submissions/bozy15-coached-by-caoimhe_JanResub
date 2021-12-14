@@ -24,7 +24,8 @@ html {
 }
 
 body {
-  background: url(/media/homepage-img.jpg) no-repeat center center / cover fixed;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url(/media/homepage-img.jpg) no-repeat center center / cover fixed;
   height: calc(100vh - 10.25rem);
   color: var(--font-colour);
   font-family: "Lato", sans-serif;
@@ -50,7 +51,12 @@ body {
 
 /* Navbar CSS */
 .nav-bg-color {
-  background-color: rgba(252, 237, 151, 0.603);
+  background: linear-gradient(
+    to top,
+    rgba(83, 147, 243, 0.733),
+    rgba(241, 125, 144, 0.76)
+  );
+  border-bottom: 2px solid rgba(0, 0, 0, 0.6);
 }
 
 .site-logo-link {
@@ -121,11 +127,11 @@ footer.footer {
     rgba(241, 125, 144, 0.76),
     rgba(83, 147, 243, 0.733)
   );
-  border-top: 1px solid rgba(0, 0, 0, 0.125);
+  border-top: 2px solid rgba(0, 0, 0, 0.6);
   color: var(--font-colour);
   text-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.5);
   box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.5);
-  padding-top: 4.25rem;
+  padding-top: 2.25rem;
 }
 
 .footer-text {
@@ -207,17 +213,17 @@ i.fab.fa-instagram:focus {
 .footer-links > .footer-subscribe form input {
   width: 100%;
   font-size: 0.95rem;
-  background: #fafafa49;
+  background: #fafafaa8;
   border: none;
   border-radius: 0.25rem;
   padding: 0.2rem 0;
-  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: -1px 1px 4px 0px rgba(0, 0, 0, 0.8);
   padding-left: 0.75rem; /* Moves placeholder text to the right */
 }
 
 .footer-links > .footer-subscribe form input::placeholder {
   color: var(--font-colour);
-  text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.8);
   padding-left: 0.25rem;
 }
 
