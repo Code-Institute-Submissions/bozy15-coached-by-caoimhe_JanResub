@@ -120,6 +120,17 @@ body {
   position: relative;
   right: -4rem;
 }
+
+.overlay { /* Creates a light overlay to cover the image */
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-color: #fff;
+  z-index: -1;
+}
+
 /* END Landing page CSS */
 
 /* Footer CSS */
