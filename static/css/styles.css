@@ -15,6 +15,8 @@
 *:before,
 *:after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
@@ -24,11 +26,15 @@ html {
 }
 
 body {
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url(/media/homepage-img.jpg) no-repeat center center / cover fixed;
   height: calc(100vh - 10.25rem);
   color: var(--font-colour);
   font-family: "Lato", sans-serif;
+}
+
+.homepage-img {
+  /* Darkens the colour slightly to match colour palette for project */
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("/media/homepage-img.jpg") no-repeat center center / cover;
 }
 
 /* ---- CUSTOM CSS CLASSES ---- */
@@ -51,11 +57,7 @@ body {
 
 /* Navbar CSS */
 .nav-bg-color {
-  background: linear-gradient(
-    to top,
-    rgba(83, 147, 243, 0.733),
-    rgba(241, 125, 144, 0.76)
-  );
+  background: #cdb4dbe8;
   border-bottom: 2px solid rgba(0, 0, 0, 0.6);
 }
 
@@ -122,11 +124,7 @@ body {
 
 /* Footer CSS */
 footer.footer {
-  background: linear-gradient(
-    to top,
-    rgba(241, 125, 144, 0.76),
-    rgba(83, 147, 243, 0.733)
-  );
+  background: #cdb4dbe8;
   border-top: 2px solid rgba(0, 0, 0, 0.6);
   color: var(--font-colour);
   text-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.5);
