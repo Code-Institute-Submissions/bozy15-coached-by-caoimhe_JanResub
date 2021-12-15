@@ -1,0 +1,27 @@
+<!-- Entend the base.html template -->
+{% extends "base.html" %}
+<!-- Load static files -->
+{% load static %}
+
+<!-- Block page header -->
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+<!-- Content block -->
+{% block content %}
+    <!-- Landing page -->
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                {{ workouts }}
+            </div>
+        </div>
+    </div>
+    <!-- END Landing page -->
+{% endblock %}
+<!-- End Content block -->
