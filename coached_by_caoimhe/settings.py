@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "allauth.account",  # Allows basic account management
     "allauth.socialaccount",  # Allows logging in through social accounts,
     "home",
+    "workouts",
 ]
 
 MIDDLEWARE = [

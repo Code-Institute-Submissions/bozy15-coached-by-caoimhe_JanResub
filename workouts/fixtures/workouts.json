@@ -1,0 +1,86 @@
+[
+    {
+        "pk": 1,
+        "model": "workouts.workout",
+        "fields": {
+            "name": "Home Workout with bodyweight",
+            "description": "This is a workout using your bodyweight",
+            "length_of_workout": "50 mins",
+            "weeks_of_plan": "5 week",
+            "price": "100.00",
+            "category": "1",
+            "image_url": "https://image.freepik.com/free-photo/young-woman-doing-exercises-home_144627-43003.jpg",
+            "image": "home-bodyweight.jpg"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "workouts.workout",
+        "fields": {
+            "name": "Home Workout with equipment",
+            "description": "This is a workout using equipment",
+            "length_of_workout": "50 mins",
+            "weeks_of_plan": "5 week",
+            "price": "100.00",
+            "category": "2",
+            "image_url": "https://image.freepik.com/free-photo/young-woman-training-gym_144627-43848.jpg",
+            "image": "home-equipment.jpg"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "workouts.workout",
+        "fields": {
+            "name": "Gym Workout with bodyweight",
+            "description": "This is a workout made for in the gym using your bodyweight",
+            "length_of_workout": "50 mins",
+            "weeks_of_plan": "5 week",
+            "price": "100.00",
+            "category": "3",
+            "image_url": "https://image.freepik.com/free-photo/full-shot-woman-training-abs-gym_23-2149049824.jpg",
+            "image": "gym-bodyweight.jpg"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "workouts.workout",
+        "fields": {
+            "name": "Gym Workout with equipment",
+            "description": "This is a workout made for in the gym using equipment",
+            "length_of_workout": "50 mins",
+            "weeks_of_plan": "5 week",
+            "price": "100.00",
+            "category": "4",
+            "image_url": "https://images.pexels.com/photos/2247179/pexels-photo-2247179.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+            "image": "gym-equipment.jpg"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "workouts.workout",
+        "fields": {
+            "name": "Prenatal Workout",
+            "description": "This is a workout designed for pregnant woman",
+            "length_of_workout": "50 mins",
+            "weeks_of_plan": "5 week",
+            "price": "100.00",
+            "category": "5",
+            "image_url": "https://images.pexels.com/photos/3984372/pexels-photo-3984372.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+            "image": "prenatal.jpg"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "workouts.workout",
+        "fields": {
+            "name": "Postnatal Workout",
+            "description": "This is a workout designed for woman after pregnancy",
+            "length_of_workout": "50 mins",
+            "weeks_of_plan": "5 week",
+            "price": "100.00",
+            "category": "6",
+            "image_url": "https://image.freepik.com/free-photo/mother-with-her-baby-daughter-practice-yoga-home_1303-29043.jpg",
+            "image": "postnatal.jpg"
+        }
+    }
+]

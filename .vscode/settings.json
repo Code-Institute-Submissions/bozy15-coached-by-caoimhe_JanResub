@@ -33,5 +33,17 @@
    "[python]": {
       "editor.defaultFormatter": "ms-python.python"
    },
-   "python.formatting.provider": "black"
+   "python.formatting.provider": "black",
+   "[json]": {
+      "editor.defaultFormatter": "vscode.json-language-features"
+   },
+   "spellright.language": [
+      "en"
+   ],
+   "spellright.documentTypes": [
+      "markdown",
+      "latex",
+      "plaintext",
+      "json"
+   ]
 }

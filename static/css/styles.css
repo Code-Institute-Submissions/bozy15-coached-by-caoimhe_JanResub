@@ -34,7 +34,7 @@ body {
 .homepage-img {
   /* Darkens the colour slightly to match colour palette for project */
   background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url("/media/homepage-img.jpg") no-repeat center center / cover;
+    url("/static/images/homepage-img.jpg") no-repeat center center / cover;
 }
 
 /* ---- CUSTOM CSS CLASSES ---- */
