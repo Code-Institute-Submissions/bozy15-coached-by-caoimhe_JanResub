@@ -8,6 +8,10 @@ class Category(models.Model):
     Name is used programmatically, friendly_name is used for the user.
     """
 
+    # Changes the name from categorys to categories in admin
+    class Meta:
+        verbose_name_plural = "Categories"
+
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
 
