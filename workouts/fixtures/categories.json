@@ -3,48 +3,32 @@
         "pk": 1,
         "model": "workouts.category",
         "fields": {
-            "name": "home_workout_bodyweight",
-            "friendly_name": "Home Workout - Bodyweight"
+            "name": "home_workout_plans",
+            "friendly_name": "Home Workout Plans"
         }
     },
     {
         "pk": 2,
         "model": "workouts.category",
         "fields": {
-            "name": "home_workout_equipment",
-            "friendly_name": "Home Workout - Equipment"
+            "name": "gym_workout_plans",
+            "friendly_name": "Gym Workout Plans"
         }
     },
     {
         "pk": 3,
         "model": "workouts.category",
         "fields": {
-            "name": "gym_workout_bodyweight",
-            "friendly_name": "Gym Workout - Bodyweight"
+            "name": "prenatal_workout_plans",
+            "friendly_name": "Prenatal Plans"
         }
     },
     {
         "pk": 4,
         "model": "workouts.category",
         "fields": {
-            "name": "gym_workout_equipment",
-            "friendly_name": "Gym Workout - Equipment"
-        }
-    },
-    {
-        "pk": 5,
-        "model": "workouts.category",
-        "fields": {
-            "name": "prenatal",
-            "friendly_name": "Prenatal"
-        }
-    },
-    {
-        "pk": 6,
-        "model": "workouts.category",
-        "fields": {
-            "name": "postnatal",
-            "friendly_name": "Postnatal"
+            "name": "postnatal_workout_plans",
+            "friendly_name": "Postnatal Plans"
         }
     }
 ]

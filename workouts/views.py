@@ -5,7 +5,7 @@ from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
 
-from .models import Workout
+from .models import Workout, Category
 
 def all_workouts(request):
     """ A view to show all workouts, including sorting and search queries """
@@ -14,9 +14,18 @@ def all_workouts(request):
     workouts = Workout.objects.all()
     # Set query to none to prevent errors
     query = None
+    categories = None
 
     # Checks if request.get exists
     if request.GET:
+        # check if category is in request.get
+        if "category" in request.GET:
+            categories = request.GET['category'].split(',')
+            # if it is, filter by category
+            workouts = workouts.filter(category__name__in=categories)
+            # Filter all categories
+            categories = Category.objects.filter(name__in=categories)
+
         if "q" in request.GET:
             # Store input in variable
             query = request.GET["q"]
@@ -35,6 +44,7 @@ def all_workouts(request):
     context = {
         "workouts": workouts,
         "search_term": query, # Pass the search term to the template
+        "current_categories": categories, # Pass the list of categories to the template
     }
 
     return render(request, "workouts/workouts.html", context)

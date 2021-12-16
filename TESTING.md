@@ -24,4 +24,10 @@ This is the documentation for the testing file. If you would like to the view th
 
 ## Resolved Bugs
 
+### UnboundLocalError: local variable 'category' referenced before assignment
+
+#### Fixed
+
+- In the all_workouts view I declared "category" as a variable and then used the variable "categories". This caused an error and was easily fixed by changing the variable name to "categories".
+
 ## Unresolved Bugs

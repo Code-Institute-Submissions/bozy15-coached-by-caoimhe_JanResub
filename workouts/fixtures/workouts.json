@@ -3,7 +3,7 @@
         "pk": 1,
         "model": "workouts.workout",
         "fields": {
-            "name": "Home Workout with bodyweight",
+            "name": "Home Workout Plan",
             "description": "Bodyweight workout plan tailored to each individual", 
             "equipment_required": "None",
             "weekly_checkin": "No",
@@ -26,7 +26,7 @@
             "length_of_workout": "45 - 50 mins",
             "plan_duration": "4 weeks",
             "price": "49.99",
-            "category": "2",
+            "category": "1",
             "image_url": "https://image.freepik.com/free-photo/beautiful-woman-working-out-gym_144627-44003.jpg",
             "image": "home-equipment.jpg"
         }
@@ -42,7 +42,7 @@
             "length_of_workout": "30 mins",
             "plan_duration": "4 weeks",
             "price": "39.99",
-            "category": "3",
+            "category": "2",
             "image_url": "https://image.freepik.com/free-photo/full-shot-woman-training-abs-gym_23-2149049824.jpg",
             "image": "gym-bodyweight.jpg"
         }
@@ -51,14 +51,14 @@
         "pk": 4,
         "model": "workouts.workout",
         "fields": {
-            "name": "Gym Workout plan",
+            "name": "Gym Workout Plan",
             "description": "Individual workout plan tailored to your experience & goals",
             "equipment_required": "Dumbbell, barbell or kettlebell",
             "weekly_checkin": "Yes",
             "length_of_workout": "45 - 50 mins",
             "plan_duration": "4 weeks",
             "price": "49.99",
-            "category": "4",
+            "category": "2",
             "image_url": "https://images.pexels.com/photos/2247179/pexels-photo-2247179.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
             "image": "gym-equipment.jpg"
         }
@@ -74,7 +74,7 @@
             "length_of_workout": "45 mins",
             "plan_duration": "4 weeks",
             "price": "49.99",
-            "category": "5",
+            "category": "3",
             "image_url": "https://images.pexels.com/photos/3984372/pexels-photo-3984372.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
             "image": "prenatal.jpg"
         }
@@ -90,7 +90,7 @@
             "length_of_workout": "45 mins",
             "plan_duration": "4 weeks",
             "price": "49.99",
-            "category": "6",
+            "category": "4",
             "image_url": "https://image.freepik.com/free-photo/mother-with-her-baby-daughter-practice-yoga-home_1303-29043.jpg",
             "image": "postnatal.jpg"
         }

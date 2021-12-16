@@ -13,16 +13,16 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="workout-plan-links">
                 <li class="dropdown-item">
-                    <a href="#">Home Workout Plans</a>
+                    <a href="{% url 'workouts' %}?category=home_workout_plans">Home Workout Plans</a>
                 </li>
                 <li class="dropdown-item">
-                    <a href="#">Gym Workout Plans</a>
+                    <a href="{% url 'workouts' %}?category=gym_workout_plans">Gym Workout Plans</a>
                 </li>
                 <li class="dropdown-item">
-                    <a href="#">Prenatal Plans</a>
+                    <a href="{% url 'workouts' %}?category=prenatal_workout_plans">Prenatal Plans</a>
                 </li>
                 <li class="dropdown-item">
-                    <a href="#">Postnatal Plans</a>
+                    <a href="{% url 'workouts' %}?category=postnatal_workout_plans">Postnatal Plans</a>
                 </li>
                 <li class="dropdown-item">
                     <a href="{% url 'workouts' %}">All Plans</a>
