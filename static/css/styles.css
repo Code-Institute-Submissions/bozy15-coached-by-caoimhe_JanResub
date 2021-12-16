@@ -21,7 +21,7 @@
 
 html {
   box-sizing: border-box;
-  height: 100%; /* Allows the h-100 and vertical centering to work */
+  height: 100vh; /* Allows the h-100 and vertical centering to work */
   scroll-behavior: smooth;
 }
 
@@ -47,6 +47,10 @@ body {
   justify-content: center;
   height: 1.5rem;
   width: 1.5rem;
+}
+
+.h-100 {
+  height: 100vh;
 }
 
 /* Custom text shadow class */
@@ -116,9 +120,14 @@ body {
 /* END NAVBAR CSS */
 
 /* Landing page CSS */
+.container-height {
+  height: 100vh;
+}
+
 .container-position {
   position: relative;
   right: -4rem;
+  bottom: 3rem;
 }
 
 .overlay {
@@ -277,14 +286,14 @@ i.fab.fa-instagram:focus {
   }
 
   .header-container {
-    padding-top: 10.25rem;
+    padding-top: 10.5rem;
   }
 }
 
 /* Add pad-top to top when navbar is collapsed mobile */
 @media (max-width: 991px) {
   .header-container {
-    padding-top: 7.25rem;
+    padding-top: 5.5rem;
   }
 
   body {

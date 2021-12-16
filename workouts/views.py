@@ -12,10 +12,29 @@ def all_workouts(request):
 
     # Get all the available workouts
     workouts = Workout.objects.all()
+    # Set query to none to prevent errors
+    query = None
+
+    # Checks if request.get exists
+    if request.GET:
+        if "q" in request.GET:
+            # Store input in variable
+            query = request.GET["q"]
+            # If the input is empty
+            if not query:
+                messages.error(request, "You didn't enter any search criteria!")
+                return redirect(reverse("workouts"))
+
+            # Filter the workouts by the input in either the name or description
+            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            workouts = Workout.objects.filter(queries)
+
+
 
     # makes everything available in the template
     context = {
-        'workouts': workouts, 
+        "workouts": workouts,
+        "search_term": query, # Pass the search term to the template
     }
 
     return render(request, "workouts/workouts.html", context)
