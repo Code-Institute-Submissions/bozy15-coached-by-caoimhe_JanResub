@@ -34,9 +34,13 @@
                                 <!-- Card to display each workout -->
                                 <div class="card workout-card h-100 border-1 rounded-4">
                                     {% if workout.image %}
-                                        <img class="card-img-top img-fluid" src="{{ workout.image.url }}" alt="{{workout.name}}">
+                                        <a href="{% url 'workout_detail' workout.id %}">
+                                            <img class="card-img-top img-fluid" src="{{ workout.image.url }}" alt="{{ workout.name }}">
+                                        </a>  
                                     {% else %}
-                                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="Card image cap">
+                                        <a href="{% url 'workout_detail' workout.id %}">
+                                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ workout.name }}">
+                                        </a>  
                                     {% endif %}
                                     <div class="card-body">
                                         <p class="card-title">{{ workout.name }}</p>

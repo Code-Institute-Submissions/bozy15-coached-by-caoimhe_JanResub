@@ -4,7 +4,7 @@
         "model": "workouts.workout",
         "fields": {
             "name": "Home Workout with bodyweight",
-            "description": "Bodyweight workout plan tailored to each individuals experience and goals", 
+            "description": "Bodyweight workout plan tailored to each individual", 
             "equipment_required": "None",
             "weekly_checkin": "No",
             "length_of_workout": "30 mins",
@@ -19,8 +19,8 @@
         "pk": 2,
         "model": "workouts.workout",
         "fields": {
-            "name": "Home Workout with equipment",
-            "description": "Individual workout designed with your goals and experience in mind using some basic equipment",
+            "name": "Home Workout Plan ",
+            "description": "Individual workout designed to your goals and experience.",
             "equipment_required": "Dumbbell, barbell or kettlebell",
             "weekly_checkin": "Yes",
             "length_of_workout": "45 - 50 mins",
@@ -35,8 +35,8 @@
         "pk": 3,
         "model": "workouts.workout",
         "fields": {
-            "name": "Gym Workout with bodyweight",
-            "description": "Bodyweight workout plan tailored to each individual within the gym",
+            "name": "Gym Workout Plan",
+            "description": "Bodyweight workout plan tailored to each individual",
             "equipment_required": "None",
             "weekly_checkin": "No",
             "length_of_workout": "30 mins",
@@ -51,8 +51,8 @@
         "pk": 4,
         "model": "workouts.workout",
         "fields": {
-            "name": "Gym Workout with equipment",
-            "description": "Individual workout plan tailored to your experience & goals using gym equipment",
+            "name": "Gym Workout plan",
+            "description": "Individual workout plan tailored to your experience & goals",
             "equipment_required": "Dumbbell, barbell or kettlebell",
             "weekly_checkin": "Yes",
             "length_of_workout": "45 - 50 mins",
@@ -67,7 +67,7 @@
         "pk": 5,
         "model": "workouts.workout",
         "fields": {
-            "name": "Prenatal Workout",
+            "name": "Prenatal Plan",
             "description": "Workout plans tailored for pregnant mamas, Plans will change as you progress through your prenatal journey",
             "equipment_required": "Plans can be created for bodyweight and/or weighted exercises",
             "weekly_checkin": "Yes",
@@ -83,7 +83,7 @@
         "pk": 6,
         "model": "workouts.workout",
         "fields": {
-            "name": "Postnatal Workout",
+            "name": "Postnatal Plan",
             "description": "Workout plans tailored for new mamas, Plans will change as you progress through your postnatal journey",
             "equipment_required": "Plans can be created for bodyweight and/or weighted exercises",
             "weekly_checkin": "Yes",

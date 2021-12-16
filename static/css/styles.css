@@ -121,7 +121,8 @@ body {
   right: -4rem;
 }
 
-.overlay { /* Creates a light overlay to cover the image */
+.overlay {
+  /* Creates a light overlay to cover the image */
   height: 100%;
   width: 100%;
   top: 0;
@@ -277,5 +278,16 @@ i.fab.fa-instagram:focus {
 
   .header-container {
     padding-top: 10.25rem;
+  }
+}
+
+/* Add pad-top to top when navbar is collapsed mobile */
+@media (max-width: 991px) {
+  .header-container {
+    padding-top: 7.25rem;
+  }
+
+  body {
+    height: calc(100vh - 7.25rem);
   }
 }

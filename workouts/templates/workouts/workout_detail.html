@@ -1,0 +1,73 @@
+<!-- Entend the base.html template -->
+{% extends "base.html" %}
+<!-- Load static files -->
+{% load static %}
+
+<!-- Block page header -->
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+<!-- Content block -->
+{% block content %}
+    <!-- Workout details page -->
+    <div class="overlay"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
+                <div class="image-container my-5">
+                    <!-- Workout plan image -->
+                    {% if workout.image %}
+                    <a href="{{ workout.image.url }}" target="_blank">
+                        <img class="card-img-top img-fluid" src="{{ workout.image.url }}" alt="{{ workout.name }}">
+                    </a>
+                    {% else %}
+                    <a href="">
+                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ workout.name }}">
+                    </a>
+                    {% endif %}
+                    <!-- END Workout plan image -->
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="workout-details-container mb-5 mt-md-5">
+                    <!-- name and description -->
+                    <h1 class="workout-name mb-3">{{ workout.name }}</h1>
+                    <p class="workout-description mb-3">{{ workout.description }}</p>
+                    <p class="workout-equipment mb-3">
+                        <span class="workout-details-label">Equipment: </span>
+                        <span class="workout-details-value">{{ workout.equipment_required }}</span>
+                    </p>
+                    <!-- END name and description -->
+                    <!-- Duration, weekly checkin and workout length -->
+                    <ul>
+                        <li class="workout-duration mb-3">
+                            <span class="workout-details-label">Duration: </span>
+                            <span class="workout-details-value">{{ workout.plan_duration }}</span>
+                        </li>
+                        <li class="workout-weekly-checkin mb-3">
+                            <span class="workout-details-label">Weekly checkin: </span>
+                            <span class="workout-details-value">{{ workout.weekly_checkin }}</span>
+                        </li>
+                        <li class="workout-length mb-3">
+                            <span class="workout-details-label">Length: </span>
+                            <span class="workout-details-value">{{ workout.length_of_workout }}</span>
+                        </li>
+                    </ul>
+                    <!-- END Duration, weekly checkin and workout length -->
+                    <!-- Price -->
+                    <div class="workout-price mb-3">
+                        <span class="workout-details-label">Price:</span>
+                        <span class="workout-details-value">{{ workout.price }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END Workout details page -->
+{% endblock %}
+<!-- End Content block -->
