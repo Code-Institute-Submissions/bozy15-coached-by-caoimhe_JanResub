@@ -6,8 +6,12 @@ def cart_contents(request):
     # list to hold the cart contents
     cart_plan = []
     total = 0
-    product_count = 0
+    plan_count = 0
 
-    context = {}
+    context = {
+        'cart_plan': cart_plan,
+        'total': total,
+        'plan_count': plan_count,
+    }
 
     return context
