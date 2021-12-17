@@ -75,6 +75,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",  # Required by allauth, access to request object
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "cart.contexts.cart_contents", # Required to allow access to all templates
             ],
         },
     },
