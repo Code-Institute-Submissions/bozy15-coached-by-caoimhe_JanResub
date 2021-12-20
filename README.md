@@ -315,8 +315,10 @@ DATABASES = {
 
 ### Image
 
-- The website used to remove the background of an image was found [here](https://www.remove.bg/)
+- The website used to remove the background of an image was found [**here**](https://www.remove.bg/)
 
-- The image used for the landing page was found [here](https://www.freepik.com/free-photo/young-beautiful-woman-bright-sportwear-isolated-gradient-pink-blue-background-neon-light_11689908.htm)
+- The image used for the landing page was found [**here**](https://www.freepik.com/free-photo/young-beautiful-woman-bright-sportwear-isolated-gradient-pink-blue-background-neon-light_11689908.htm)
+
+- The image used for a plan with no image was taken from the CI walkthrough project which can be found [**here**](https://github.com/Code-Institute-Solutions/boutique_ado_v1/blob/4b28dfe82da5e5e24ed830f15ebe4f70deca8886/media/noimage.png)
 
 ## Acknowledgements
