@@ -51,7 +51,11 @@
                 <div class="container text-dark">
                     <div class="row text-center">
                         <div class="col-md-3">
-                            <a id="remove_{{ item.item_id }}" class="remove-item btn btn-sm btn-danger">Remove Plan</a>
+                            <form action="{% url 'remove_from_cart' item.item_id %}" method="POST">
+                                {% csrf_token %}
+                                <input type="hidden" data-item_id="{{ item.item_id }}" name="workout_id" value="{{ item.workout.id }}">
+                                <button type="submit"  id="remove_{{ item.item_id }}" class="remove-item btn btn-danger">Remove item</button>
+                            <!-- <a data-item_id="{{ item.workout.item_id }}" class="remove-item btn btn-sm btn-danger">Remove Plan</a> -->
                         </div> 
                     </div>
                     <hr>
@@ -85,10 +89,16 @@
             <!-- END loop through and display cart_items -->
         {% else %}
             <!-- If cart_items list is empty, Display -->
-            <div class="container mb-2">
+            <div class="container mb-2 text-center text-dark">
                 <div class="row">
                     <div class="col">
                         <h4>Your cart is empty</h4>
+                        <a href="{% url 'workouts' %}" class="btn rounded-2 btn-lg mb-2">
+                            <span class="icon">
+                                <i class="fas fa-dumbbell"></i>
+                            </span>
+                            <span class="text-uppercase ps-1">Checkout our Plans</span>
+                        </a>
                     </div>
                 </div>
             </div> 
@@ -99,15 +109,15 @@
 <!-- End Content block -->
 
 <!-- postloadjs block -->
-{% block postloadjs %}
-{{ block.super}}
+{% block postload_js %}
+{{ block.super }}
     <script type="text/javascript">
         // Remove item from cart
         $(".remove-item").click((e) => {
             e.preventDefault();
-            let csrfToken = "{{ csrf_Token}}"; // Get CSRF token
-            let itemId = $(this).attr('id').split('remove_')[1]; // Get item id from button id
-            let url = `/cart/remove/${itemId}`; // Get url to remove item from cart 
+            let csrfToken = "{{ csrf_token }}"; // Get CSRF token
+            let itemId = $(e.target).attr("id").split("remove_")[1]; // Get item id from button id
+            let url = `/cart/remove/${itemId}/`; // Get url to remove item from cart 
             let data = { // data object used to send to url
                 'csrfmiddlewaretoken': csrfToken
             };
