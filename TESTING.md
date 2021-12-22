@@ -31,3 +31,9 @@ This is the documentation for the testing file. If you would like to the view th
 - In the all_workouts view I declared "category" as a variable and then used the variable "categories". This caused an error and was easily fixed by changing the variable name to "categories".
 
 ## Unresolved Bugs
+
+### Bootstrap 5 toasts not working
+
+#### Current status
+
+- Issues with the bootstrap 5 toasts not working while tryin to initialize them with jQuery. I noticed an error in the console saying `(...).toast()` is not a function. I tried to initialize the toasts with vanilla JavaScript which removed the error but the toasts still didn't show when called. Due to time constraints on this project I decided to link bootstrap 4 popper and JavaScript to the project to allow the toasts to work.

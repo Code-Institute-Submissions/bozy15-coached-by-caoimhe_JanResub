@@ -1,5 +1,8 @@
 from django.http.response import HttpResponse
 from django.shortcuts import redirect, render
+from django.contrib import messages
+
+from workouts.models import Workout
 
 
 def view_cart(request):
@@ -11,6 +14,8 @@ def view_cart(request):
 def add_to_cart(request, item_id):
     """Add a specified product to the cart"""
 
+    # Get workout from database
+    workout = Workout.objects.get(pk=item_id)
     # Get redirect url so user can be redirected to the page they were on
     redirect_url = request.POST.get("redirect_url")
     # Store session key in a variable to allow user to move through site without losing session
@@ -19,9 +24,11 @@ def add_to_cart(request, item_id):
     # If item is already in cart, do not increase quantity by 1
     if item_id in list(cart.keys()):
         cart[item_id] = 1
+        messages.success(request, f"{workout.name} has been added to your cart!")
     # If item is not in cart, add it to cart
     else:
         cart[item_id] = 1
+        messages.success(request, f"{workout.name} has been added to your cart!")
 
     # Update session cart
     request.session["cart"] = cart

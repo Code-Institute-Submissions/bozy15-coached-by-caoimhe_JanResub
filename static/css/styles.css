@@ -143,6 +143,24 @@ body {
 
 /* END Landing page CSS */
 
+/* Bootstrap toasts CSS */
+.message-container {
+  position: fixed;
+  top: 4.5rem;
+  right: 1rem;
+  z-index: 999999999999; /* Ensures the toast is always on top */
+}
+
+.custom-toast {
+  overflow: visible; /* Allows the toast to be scrollable */
+}
+
+.toaster-capper {
+  height: 0.25rem;
+}
+
+/* END Bootstrap toasts CSS */
+
 /* Footer CSS */
 footer.footer {
   background: #cdb4dbe8;

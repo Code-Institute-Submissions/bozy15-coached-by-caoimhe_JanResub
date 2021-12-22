@@ -75,7 +75,7 @@
                                         <span class="text-uppercase">Go back</span>
                                     </span>
                                 </a>
-                                <input type="submit" class="btn.btn-dark.rounded-2.text-uppercase.mt-5" data-item_id="{{ workout.id }}"
+                                <input type="submit" class="btn btn-cart btn-dark rounded-2 text-uppercase mt-5" data-item_id="{{ workout.id }}"
                                     value="Add to Cart">
                             </div>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
@@ -89,3 +89,7 @@
     <!-- END Workout details page -->
 {% endblock %}
 <!-- End Content block -->
+
+{% block postload_js %}
+    {{ block.super }}
+{% endblock %}

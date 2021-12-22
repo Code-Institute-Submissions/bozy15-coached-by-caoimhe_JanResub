@@ -25,7 +25,10 @@
         </div>
         <div class="row">
             <div class="col">
-                <div class="workout-container col-10 offset-1">
+                <div class="workout-container col-10 offset-1 text-dark">
+                    {% for message in messages %}
+                    {{ message }}
+                    {% endfor %}
                     <div class="row mt-1 mb-2"></div>
                     <div class="row text-center">
                         <!-- Django for loop to iterate through the workouts variable -->
@@ -86,3 +89,7 @@
     <!-- END All Workouts page -->
 {% endblock %}
 <!-- End Content block -->
+
+{% block postload_js %}
+    {{ block.super }}
+{% endblock %}

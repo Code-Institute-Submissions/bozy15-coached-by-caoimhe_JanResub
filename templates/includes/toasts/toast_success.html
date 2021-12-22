@@ -1,0 +1,24 @@
+<!-- Customized Bootstrap Successful notifcation toast -->
+<div class="toast custom-toast rounded-1" data-autohide="false">
+    <div class="arrow-up arrow-success"></div>
+    <!-- banner -->
+    <div class="toast-capper w-100 bg-success"></div>
+    <!-- End banner -->
+    <!-- Title -->
+    <div class="toast-header bg-light text-dark">
+        <strong class="mr-auto">Success!</strong>
+        <button type="button" class="btn ml-2 mb-1 btn-outline-secondary" data-bs-dismiss="toast"
+            aria-label="Close"></button>
+    </div>
+    <!-- End Title -->
+    <!-- Message -->
+    <div class="toast-body bg-light text-dark">
+        <div class="row">
+            <div class="col">
+                {{ message }}
+                <hr class="mt-2 mb-2">
+            </div>
+        </div>
+    </div>
+    <!-- End Message -->
+</div>
