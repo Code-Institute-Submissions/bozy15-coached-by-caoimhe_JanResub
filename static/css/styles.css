@@ -146,7 +146,7 @@ body {
 /* Bootstrap toasts CSS */
 .message-container {
   position: fixed;
-  top: 4.5rem;
+  top: 5.5rem;
   right: 1rem;
   z-index: 999999999999; /* Ensures the toast is always on top */
 }
@@ -155,7 +155,60 @@ body {
   overflow: visible; /* Allows the toast to be scrollable */
 }
 
-.toaster-capper {
+/* From boutique ado walkthrough project */
+.arrow-up {
+  border-left: 0.25rem solid transparent;
+  border-right: 0.25rem solid transparent;
+  border-bottom: 0.5rem solid var(--uranian-blue);
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: -0.5rem;
+  right: 2rem;
+  
+}
+
+/* colours to match the capper colour - colour codes from bootstrap */
+/* Code taken from boutique ado walkthrough project */
+.arrow-primary {
+  border-bottom-color: #007bff !important;
+}
+
+.arrow-secondary {
+  border-bottom-color: #6c757d !important;
+}
+
+.arrow-success {
+  border-bottom-color: #28a745 !important;
+}
+
+.arrow-danger {
+  border-bottom-color: #dc3545 !important;
+}
+
+.arrow-warning {
+  border-bottom-color: #ffc107 !important;
+}
+
+.arrow-info {
+  border-bottom-color: #17a2b8 !important;
+}
+
+.arrow-light {
+  border-bottom-color: #f8f9fa !important;
+}
+
+.arrow-dark {
+  border-bottom-color: #343a40 !important;
+}
+
+.cart-notification-wrapper {
+  height: 5rem;
+  overflow-x: hidden;
+  overflow-y: auto; /* Allows the toast to be scrollable when above 5rem height*/
+}
+
+.toast-capper {
   height: 0.25rem;
 }
 

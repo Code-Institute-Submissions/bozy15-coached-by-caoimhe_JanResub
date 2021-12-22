@@ -1,13 +1,13 @@
 <!-- Customized Bootstrap Successful notifcation toast -->
-<div class="toast custom-toast rounded-1" data-autohide="false">
+<div class="toast custom-toast rounded-1 text-dark" data-autohide="false">
     <div class="arrow-up arrow-success"></div>
     <!-- banner -->
     <div class="toast-capper w-100 bg-success"></div>
     <!-- End banner -->
     <!-- Title -->
-    <div class="toast-header bg-light text-dark">
-        <strong class="mr-auto">Success!</strong>
-        <button type="button" class="btn ml-2 mb-1 btn-outline-secondary" data-bs-dismiss="toast"
+    <div class="toast-header bg-light  text-dark">
+        <strong class="me-auto">Success!</strong>
+        <button type="button" class="btn ms-2 mb-1 close btn-outline-secondary" data-bs-dismiss="toast"
             aria-label="Close"></button>
     </div>
     <!-- End Title -->
@@ -20,5 +20,39 @@
             </div>
         </div>
     </div>
+    <!-- Cart preview -->
+    {% if total %}
+        <p class="text-capitalize bg-light text-dark py-1">Your cart has:</p>
+        <div class="cart-notification-wrapper">
+            {% for item in cart_items %}
+            <div class="row">
+                <div class="col-3 my1">
+                    {% if item.workout.image %}
+                            <img class="card-img-top img-fluid" src="{{ item.workout.image.url }}" alt="{{ item.workout.name }}"> 
+                    {% else %}
+                            <img class="card-img-top img-fluid" src="/media/noimage.png" alt="{{ item.workout.name }}"> 
+                    {% endif %}
+                </div>
+                <div class="col-9">
+                    <p class="my-0"><strong>{{ item.workout.name }}</strong></p>
+                    <p class="my-0 small">{{ item.workout.description }}</p>
+                    <p class="my-0 small">Duration: {{ item.workout.plan_duration }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="row">
+            <div class="col d-grid gap-2">
+                <p class="my-0 p-2"><span class="float-end"><strong>Total:</strong> {{ total }}</span></p>
+                <a href="{% url 'view_cart' %}" class="btn btn-sm btn-outline-secondary ms-2 mb-3 rounded-2">
+                    <span class="text-uppercase">Go to Checkout</span>
+                    <span class="icon">
+                        <i class="fas fa-credit-card"></i>
+                    </span>
+                </a>
+            </div>
+        </div>
+    {% endif %}
+    <!-- End Cart preview -->
     <!-- End Message -->
 </div>
