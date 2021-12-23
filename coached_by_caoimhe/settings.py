@@ -46,6 +46,10 @@ INSTALLED_APPS = [
     "workouts",
     "cart",
     "checkout",
+
+    # "django_extensions",
+    "crispy_forms",
+    "crispy_bootstrap5",
 ]
 
 MIDDLEWARE = [
@@ -59,6 +63,10 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "coached_by_caoimhe.urls"
+
+# from https://github.com/django-crispy-forms/crispy-bootstrap5
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 TEMPLATES = [
     {
@@ -76,7 +84,12 @@ TEMPLATES = [
                 "django.template.context_processors.request",  # Required by allauth, access to request object
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "django.template.context_processors.media",
                 "cart.contexts.cart_contents", # Required to allow access to all templates
+            ],
+            "builtins": [ 
+                'crispy_forms.templatetags.crispy_forms_tags',
+                'crispy_forms.templatetags.crispy_forms_field',
             ],
         },
     },
