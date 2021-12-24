@@ -1,0 +1,126 @@
+<!-- Extend from base template -->
+{% extends "base.html" %}
+<!-- Load static files -->
+{% load static %}
+<!-- Extra css file -->
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
+<!-- Page header -->
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+<!-- END Page header -->
+
+<!-- Main content -->
+{% block content %}
+<div class="overlay"></div>
+<!-- Checkout success page -->
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h2>Thank You</h2>
+            <hr>
+            <p class="text-dark">Your order information is below and a confirmation email has been sent to <strong>{{ order.email }}</strong></p>
+        </div>
+    </div>
+</div>
+<!-- Order information -->
+<div class="row">
+    <div class="col-12 col-lg-7">
+        <div class="order-confirmation-wrapper p-2 border">
+            <div class="row">
+                <div class="col">
+                    <small class="text-muted">Order info</small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <p class="mb-1">Order Number</p>
+                </div>
+                <div class="col-12 col-md-8 text-md-right">
+                    <p class="mb-1">{{ order.order_number }}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <p class="mb-1">Order Date</p>
+                </div>
+                <div class="col-12 col-md-8 text-md-right">
+                    <p class="mb-1">{{ order.date }}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col"><small class="text-muted">Order Details</small></div>
+            </div>
+            {% for item in order.lineitems.all %}
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <p class="small mb-0">
+                            {{ item.workout.name }}
+                        </p>
+                    </div>
+                    <div class="col-12 col-md-8 text-md-right">
+                        <p class="small mb-0">€{{ item.workout.price }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+            <!-- Customer name -->
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <p class="mb-1">Full Name</p>
+                </div>
+                <div class="col-12 col-md-8 text-md-right">
+                    <p class="mb-1">{{ order.full_name }}</p>
+                </div>
+            </div>
+            <!-- End Customer name -->
+            <!-- Billing info -->
+            <div class="row">
+                <div class="col">
+                    <small class="text-muted">Billing Info:</small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <p class="mb-1">Total Price</p>
+                </div>
+                <div class="col-12 col-md-8 text-md-right">
+                    <p class="mb-1">{{ order.total }}</p>
+                </div>
+            </div>
+            <!-- END Billing info -->
+        </div>
+    </div>
+    <!-- END Order information -->
+    <!-- Action buttons -->
+    <div class="row">
+        <div class="col-12 col-lg-7 text-right">
+            {% if from_profile %}
+                <a href="" class="btn rounded-2 my-3">
+                    <span class="icon me-2">
+                        <i class="fas fa-angle-left"></i>
+                    </span>
+                    <span class="text-uppercase">Back to Profile</span>
+                </a>
+            {% else %}
+                <a href="{% url 'workouts' %}" class="btn rounded-0 my-3">
+                    <span class="icon me-2">
+                        <i class="fas fa-dumbbell"></i>
+                    </span>
+                    <span class="text-uppercase">Have another look at our plans, Something might be suitable for a friend or family member</span>
+                </a>
+            {% endif %}
+        </div>
+    </div>
+    <!-- Action buttons -->
+</div>
+<!-- END Checkout success page -->
+{% endblock %}
+<!-- END Main content -->
