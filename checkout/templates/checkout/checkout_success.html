@@ -32,12 +32,12 @@
     </div>
 </div>
 <!-- Order information -->
-<div class="row">
+<div class="row text-dark">
     <div class="col-12 col-lg-7">
         <div class="order-confirmation-wrapper p-2 border">
             <div class="row">
                 <div class="col">
-                    <small class="text-muted">Order info</small>
+                    <small class="text-muted fs-5">Order info</small>
                 </div>
             </div>
             <div class="row">
@@ -57,20 +57,8 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col"><small class="text-muted">Order Details</small></div>
+                <div class="col"><small class="text-muted fs-5 mb-1">Order Details</small></div>
             </div>
-            {% for item in order.lineitems.all %}
-                <div class="row">
-                    <div class="col-12 col-md-4">
-                        <p class="small mb-0">
-                            {{ item.workout.name }}
-                        </p>
-                    </div>
-                    <div class="col-12 col-md-8 text-md-right">
-                        <p class="small mb-0">€{{ item.workout.price }}</p>
-                    </div>
-                </div>
-            {% endfor %}
             <!-- Customer name -->
             <div class="row">
                 <div class="col-12 col-md-4">
@@ -81,10 +69,32 @@
                 </div>
             </div>
             <!-- End Customer name -->
+            {% for item in order.lineitems.all %}
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <p class="mb-0">
+                            {{ item.workout.name }}
+                        </p>
+                    </div>
+                    <div class="col-12 col-md-8 text-md-right">
+                        <p class="mb-0">€{{ item.workout.price }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <p class="mb-2">
+                            Plan Duration
+                        </p>
+                    </div>
+                    <div class="col-12 col-md-8 text-md-right">
+                        <p class="mb-2">{{ item.workout.plan_duration }}</p>
+                    </div>
+                </div>
+            {% endfor %}
             <!-- Billing info -->
             <div class="row">
                 <div class="col">
-                    <small class="text-muted">Billing Info:</small>
+                    <small class="text-muted fs-5">Billing Info:</small>
                 </div>
             </div>
             <div class="row">

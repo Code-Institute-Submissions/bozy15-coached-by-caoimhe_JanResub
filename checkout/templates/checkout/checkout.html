@@ -120,6 +120,7 @@
                     <!-- END Stripe card payment -->
                     <!-- Display form errors -->
                     <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+                    <input type="hidden" value={{ client_secret }} name="client_secret">
                     <!-- END Display form errors -->
                 </fieldset>
                 <div class="submit-button text-right mt-5 mb-2">
@@ -153,6 +154,15 @@
         </div>
     </div>
 </div>
+<!-- Loading overlay -->
+<div id="loading-overlay">
+    <h1 class="loading-spinner">
+        <span class="icon">
+            <i class="fas fa-3x fa-sync-alt fa-spin"></i>
+        </span>
+    </h1>
+</div>
+<!-- END Loading overlay -->
 {% endblock %}
 <!-- End Content block -->
 <!-- postload_js block -->
