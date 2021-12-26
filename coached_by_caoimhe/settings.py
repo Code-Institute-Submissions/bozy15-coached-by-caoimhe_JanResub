@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     "workouts",
     "cart",
     "checkout",
+    "profiles",
 
     # "django_extensions",
     "crispy_forms",

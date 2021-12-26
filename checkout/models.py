@@ -7,16 +7,18 @@ from django.db.models.fields import CharField
 from django_countries.fields import CountryField
 
 from workouts.models import Workout
+from profiles.models import UserProfile
 
 
 class Order(models.Model):
     """Creates order model containing the data for the order"""
-
+    
+    # automatically generated, unable to edit
     order_number = models.CharField(
         max_length=32, null=False, editable=False
-    )  # automatically generated, unable to edit
-    user = models.ForeignKey(
-        settings.AUTH_USER_MODEL,
+    )  
+    user_profile = models.ForeignKey(
+        UserProfile,
         on_delete=models.SET_NULL,
         null=True,
         blank=True,
