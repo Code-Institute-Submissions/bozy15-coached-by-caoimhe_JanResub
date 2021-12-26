@@ -19,20 +19,18 @@
                 <hr class="mt-2 mb-2">
             </div>
         </div>
-    </div>
         <!-- Cart preview -->
         {% if total %}
-        <div class="container">
-            <div class="row">
-                <p class="text-capitalize bg-light text-dark py-1">Your cart has:</p>
-                <div class="cart-notification-wrapper">
-                    {% for item in cart_items %}
+            <p class="text-capitalize bg-light text-dark py-1">Your cart has:</p>
+            <div class="cart-notification-wrapper">
+                {% for item in cart_items %}
                     <div class="row">
                         <div class="col-3 my1">
                             {% if item.workout.image %}
-                                    <img class="card-img-top img-fluid" src="{{ item.workout.image.url }}" alt="{{ item.workout.name }}"> 
+                                <img class="card-img-top img-fluid" src="{{ item.workout.image.url }}"
+                                    alt="{{ item.workout.name }}">
                             {% else %}
-                                    <img class="card-img-top img-fluid" src="/media/noimage.png" alt="{{ item.workout.name }}"> 
+                                <img class="card-img-top img-fluid" src="/media/noimage.png" alt="{{ item.workout.name }}">
                             {% endif %}
                         </div>
                         <div class="col-9">
@@ -41,10 +39,8 @@
                             <p class="my-0 small">Duration: {{ item.workout.plan_duration }}</p>
                         </div>
                     </div>
-                </div>
+                {% endfor %}
             </div>
-        </div>
-        {% endfor %}
         <div class="row">
             <div class="col d-grid gap-2">
                 <p class="my-0 p-2"><span class="float-end"><strong>Total:</strong> {{ total }}</span></p>
@@ -56,7 +52,8 @@
                 </a>
             </div>
         </div>
-    {% endif %}
+        {% endif %}
+    </div>
     <!-- End Cart preview -->
     <!-- End Message -->
 </div>
