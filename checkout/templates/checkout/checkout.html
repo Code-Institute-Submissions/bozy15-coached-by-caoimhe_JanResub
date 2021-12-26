@@ -120,6 +120,7 @@
                     <!-- END Stripe card payment -->
                     <!-- Display form errors -->
                     <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+                    <!-- Pass client_secret to the view so payment intent id is stored -->
                     <input type="hidden" value={{ client_secret }} name="client_secret">
                     <!-- END Display form errors -->
                 </fieldset>

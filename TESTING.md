@@ -30,6 +30,12 @@ This is the documentation for the testing file. If you would like to the view th
 
 - In the all_workouts view I declared "category" as a variable and then used the variable "categories". This caused an error and was easily fixed by changing the variable name to "categories".
 
+### Payments would not be processed
+
+#### Fixed
+
+- There was an issue with my jQuery code where the payment form was not being submitted and the loading spinner would spin forever. I looked through the boutique ado and found a solution to this issue but changing the some of the code back to JS.
+
 ## Unresolved Bugs
 
 ### Bootstrap 5 toasts not working

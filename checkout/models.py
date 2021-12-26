@@ -32,6 +32,9 @@ class Order(models.Model):
     county = models.CharField(max_length=80, null=True, blank=True)
     date = models.DateTimeField(auto_now_add=True)
     total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
+    # Prevent errors if user buys same item twice on different occasions
+    original_cart = models.TextField(null=False, blank=False, default="")
+    stripe_pid = models.CharField(max_length=254, null=False, blank=False, default="")
 
     def _generate_order_number(self):
         """Generate random, unique number using UUID"""
@@ -39,9 +42,9 @@ class Order(models.Model):
 
     def update_total(self):
         """Update total each time a line item is added or removed"""
-        self.total = self.lineitems.aggregate(Sum("lineitem_total"))[
-            "lineitem_total__sum"
-        ] or 0
+        self.total = (
+            self.lineitems.aggregate(Sum("lineitem_total"))["lineitem_total__sum"] or 0
+        )
         self.save()
 
     def save(self, *args, **kwargs):

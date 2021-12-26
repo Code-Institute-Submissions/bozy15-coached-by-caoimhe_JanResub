@@ -4,14 +4,15 @@ from .models import Order, OrderLineItem
 
 class OrderLineAdminInline(admin.TabularInline):
     model = OrderLineItem
-    readonly_fields = ('lineitem_total',)
+    readonly_fields = ("lineitem_total",)
+
 
 class OrderAdmin(admin.ModelAdmin):
 
     inlines = (OrderLineAdminInline,)
 
     # Prevent admin from editing these order fields
-    readonly_fields = ("order_number", "date", "total")
+    readonly_fields = ("order_number", "date", "total", "stripe_pid", "original_cart")
 
     # Display these fields when viewing an order
     fields = (
@@ -28,6 +29,8 @@ class OrderAdmin(admin.ModelAdmin):
         "street_address2",
         "county",
         "total",
+        "stripe_pid",
+        "original_cart"
     )
 
     # restrict which fields that show up in the list
@@ -35,6 +38,7 @@ class OrderAdmin(admin.ModelAdmin):
 
     # Order by date
     ordering = ("-date",)
+
 
 # Register the Order model with the admin site
 admin.site.register(Order, OrderAdmin)
