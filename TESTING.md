@@ -36,6 +36,12 @@ This is the documentation for the testing file. If you would like to the view th
 
 - There was an issue with my jQuery code where the payment form was not being submitted and the loading spinner would spin forever. I looked through the boutique ado and found a solution to this issue but changing the some of the code back to JS.
 
+### Toast success message cart preview, not working as intended
+
+#### Fixed
+
+- The contents of the cart preview were overflowing the container and the CSS was not being applied correctly. This lead me to believe that perhaps one or more HTML closing tags were missing. Looking through the code I found that the closing tags were missing in the `.toast-body` container and the `.card-notifaction-wrapper` closing tag was inside the for loop when it should been just outside.
+
 ## Unresolved Bugs
 
 ### Bootstrap 5 toasts not working

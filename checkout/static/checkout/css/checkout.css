@@ -38,6 +38,19 @@
   border: 1px solid #000;
 }
 
+/* All form borders */
+select,
+.form-select {
+  color: #000;
+  border: 1px solid #000; 
+}
+
+select:invalid,
+select option:invalid {
+  color: #aab7c4 !important; /* Override crispy form styles */
+  
+}
+
 /* Loading overlay CSS */
 
 #loading-overlay {
