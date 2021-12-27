@@ -99,3 +99,46 @@ def add_workout(request):
 
     # Render the template
     return render(request, template, context)
+
+
+@login_required
+def edit_workout(request, workout_id):
+    """Allow superusers to edit workouts"""
+
+    # Check if user is a superuser
+    if not request.user.is_superuser:
+        # If not, redirect to home page
+        messages.error(request, "Sorry, only admin can do that!")
+        return redirect(reverse("home"))
+
+    # Get the workout to be edited
+    workout = get_object_or_404(Workout, pk=workout_id)
+
+    # If form is submitted
+    if request.method == "POST":
+        # Create a form instance and populate it with data from the request
+        form = WorkoutForm(request.POST, request.FILES, instance=workout)
+        # Check if the form is valid
+        if form.is_valid():
+            # Save the new workout to the database
+            form.save()
+            # Add a success message
+            messages.success(request, "Successfully updated workout!")
+            # Redirect to the workout detail page
+            return redirect(reverse("workout_detail", args=[workout.id]))
+        # If the form is invalid, add an error message
+        else:
+            messages.error(
+                request, "Failed to update workout. Please ensure the form is valid."
+            )
+    else:  # Get the form
+        form = WorkoutForm(instance=workout)
+        messages.info(request, f"You are editing {workout.name}")
+
+    # The template that will be used
+    template = "workouts/edit_workout.html"
+    # Context that will be passed to the template
+    context = {"form": form, "workout": workout}
+
+    # Render the template
+    return render(request, template, context)
