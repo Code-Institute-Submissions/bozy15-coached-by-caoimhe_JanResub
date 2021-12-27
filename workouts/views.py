@@ -62,11 +62,36 @@ def workout_detail(request, workout_id):
     return render(request, "workouts/workout_detail.html", context)
 
 
+@login_required
 def add_workout(request):
     """Allow superusers to add workouts to the site"""
 
-    # Get the form
-    form = WorkoutForm()
+    # Check if user is a superuser
+    if not request.user.is_superuser:
+        # If not, redirect to home page
+        messages.error(request, "Sorry, only admin can do that!")
+        return redirect(reverse("home"))
+
+    # If form is submitted
+    if request.method == "POST":
+        # Create a form instance and populate it with data from the request
+        form = WorkoutForm(request.POST, request.FILES)
+        # Check if the form is valid
+        if form.is_valid():
+            # Save the new workout to the database
+            workout = form.save()
+            # Add a success message
+            messages.success(request, "Successfully added new workout!")
+            # Redirect to the workout detail page
+            return redirect(reverse("workout_detail", args=[workout.id]))
+        # If the form is invalid, add an error message
+        else:
+            messages.error(
+                request, "Failed to add workout. Please ensure the form is valid."
+            )
+    else:  # Get the form
+        form = WorkoutForm()
+
     # The template that will be used
     template = "workouts/add_workout.html"
     # Context that will be passed to the template
