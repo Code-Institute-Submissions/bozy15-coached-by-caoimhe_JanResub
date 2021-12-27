@@ -1,4 +1,5 @@
 from django import forms
+from .widgets import CustomClearableFileInput
 from .models import Workout, Category
 
 
@@ -7,6 +8,9 @@ class WorkoutForm(forms.ModelForm):
         model = Workout
         # Include all the fields from the model
         fields = "__all__"
+
+    # Override the default widget for the image field
+    image = forms.ImageField(label="Image", required=False, widget=CustomClearableFileInput)
     
     # Override the default __init__ method to add a custom form field
     def __init__(self, *args, **kwargs):

@@ -288,6 +288,35 @@ input[name="q"]::placeholder {
 }
 /* END Allauth CSS */
 
+/* Custom widget on workout form CSS */
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-file input[type="file"] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%; /* Takes up the entire span*/
+  min-height: 100%; /* Takes up the entire span*/
+  opacity: 0;
+  cursor: pointer;
+}
+
+.custom-checkbox .custom-control-label::before {
+  border-radius: 0;
+  border-color: #dc3545; /* Matches bootstraps danger colour */
+}
+
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  border-radius: 0;
+}
+
+/* END Custom widget on workout form CSS */
+
 /* Footer CSS */
 footer.footer {
   background: #cdb4dbe8;

@@ -34,8 +34,13 @@
             <div class="col-12 col-md-6 offset-md-3 text-center">
                 <form action="{% url 'add_workout' %}" method="POST" class="form form-control mb-2 rounded-2"
                     enctype="multipart/form-data">
-                    {% csrf_token %}
-                    {{ form | crispy }}
+                    {% for field in form %}
+                        {% if field.name != 'image' %}
+                            {{ field | as_crispy_field }}
+                        {% else %}
+                            {{ field }}
+                        {% endif %}
+                    {% endfor %}
                     <div class="text-right">
                         <a href="{% url 'workouts' %}" class="btn btn-back rounded-2">Cancel</a>
                         <button type="submit" class="btn btn-landing-page rounded-2 text-uppercase">Add new Plan</button>
@@ -46,3 +51,16 @@
     </div>
 {% endblock %}
 <!-- End Content block -->
+<!-- Postload_js -->
+{% block postload_js %}
+<script>
+    // When image is changed
+    $("#new-image").change(function() {
+        // Get the file
+        let file = $("#new-image")[0].files[0];
+        // Set the text in the widget template to the file name
+        $("#new-image").text(`Image will be set to: ${file.name}`);	
+    });
+</script>
+{% endblock %}
+<!-- End Postload_js -->
