@@ -25,12 +25,12 @@
             <div class="cart-notification-wrapper">
                 {% for item in cart_items %}
                     <div class="row">
-                        <div class="col-3 my1">
+                        <div class="col-3 my-1">
                             {% if item.workout.image %}
                                 <img class="card-img-top img-fluid" src="{{ item.workout.image.url }}"
                                     alt="{{ item.workout.name }}">
                             {% else %}
-                                <img class="card-img-top img-fluid" src="/media/noimage.png" alt="{{ item.workout.name }}">
+                                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.workout.name }}">
                             {% endif %}
                         </div>
                         <div class="col-9">

@@ -32,7 +32,12 @@
                 <div class="container text-dark mb-2">
                     <div class="row align-items-baseline text-center">
                         <div class="col-md-3 pb-3">
-                            <img src="{{ item.workout.image.url }}" class="rounded-2 img-fluid" alt="{{ item.workout.name }}">
+                            {% if item.workout.image %}
+                                <img class="card-img-top img-fluid" src="{{ item.workout.image.url }}"
+                                    alt="{{ item.workout.name }}">
+                            {% else %}
+                                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.workout.name }}">
+                            {% endif %}
                         </div>
                         <div class="col-md-3">
                             <h4>{{ item.workout.name }}</h4>
