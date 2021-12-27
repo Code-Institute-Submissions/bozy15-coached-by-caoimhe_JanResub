@@ -6,9 +6,11 @@ from django.db.models import Q
 from django.db.models.functions import Lower
 
 from .models import Workout, Category
+from .forms import WorkoutForm
+
 
 def all_workouts(request):
-    """ A view to show all workouts, including sorting and search queries """
+    """A view to show all workouts, including sorting and search queries"""
 
     # Get all the available workouts
     workouts = Workout.objects.all()
@@ -20,7 +22,7 @@ def all_workouts(request):
     if request.GET:
         # check if category is in request.get
         if "category" in request.GET:
-            categories = request.GET['category'].split(',')
+            categories = request.GET["category"].split(",")
             # if it is, filter by category
             workouts = workouts.filter(category__name__in=categories)
             # Filter all categories
@@ -38,24 +40,37 @@ def all_workouts(request):
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             workouts = Workout.objects.filter(queries)
 
-
-
     # makes everything available in the template
     context = {
         "workouts": workouts,
-        "search_term": query, # Pass the search term to the template
-        "current_categories": categories, # Pass the list of categories to the template
+        "search_term": query,  # Pass the search term to the template
+        "current_categories": categories,  # Pass the list of categories to the template
     }
 
     return render(request, "workouts/workouts.html", context)
 
+
 def workout_detail(request, workout_id):
-    """ A view to show individual workout details """
+    """A view to show individual workout details"""
 
     workout = get_object_or_404(Workout, pk=workout_id)
 
     context = {
-        'workout': workout,
+        "workout": workout,
     }
 
     return render(request, "workouts/workout_detail.html", context)
+
+
+def add_workout(request):
+    """Allow superusers to add workouts to the site"""
+
+    # Get the form
+    form = WorkoutForm()
+    # The template that will be used
+    template = "workouts/add_workout.html"
+    # Context that will be passed to the template
+    context = {"form": form}
+
+    # Render the template
+    return render(request, template, context)

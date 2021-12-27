@@ -16,18 +16,18 @@
 {% block content %}
     <!-- Workout details page -->
     <div class="overlay"></div>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
-                <div class="image-container my-5">
+    <div class="container-fluid text-center txt-shadow">
+        <div class="row d-flex justify-content-center">
+            <div class="col-12 col-md-6 col-lg-4 offset-lg-1">
+                <div class="image-container shadow my-5">
                     <!-- Workout plan image -->
                     {% if workout.image %}
                     <a href="{{ workout.image.url }}" target="_blank">
-                        <img class="card-img-top img-fluid" src="{{ workout.image.url }}" alt="{{ workout.name }}">
+                        <img class="card-img-top border border-dark img-fluid" src="{{ workout.image.url }}" alt="{{ workout.name }}">
                     </a>
                     {% else %}
                     <a href="">
-                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ workout.name }}">
+                        <img class="card-img-top border border-dark img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ workout.name }}">
                     </a>
                     {% endif %}
                     <!-- END Workout plan image -->
