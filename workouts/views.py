@@ -142,3 +142,23 @@ def edit_workout(request, workout_id):
 
     # Render the template
     return render(request, template, context)
+
+
+@login_required
+def delete_workout(request, workout_id):
+    """Allow superusers to delete workouts"""
+
+    # Check if user is a superuser
+    if not request.user.is_superuser:
+        # If not, redirect to home page
+        messages.error(request, "Sorry, only admin can do that!")
+        return redirect(reverse("home"))
+
+    # Get the workout to be deleted
+    workout = get_object_or_404(Workout, pk=workout_id)  
+    # Delete the workout from the database
+    workout.delete()
+    # Add a success message
+    messages.success(request, "Successfully deleted workout!")
+    # Redirect to the workouts page
+    return redirect(reverse("workouts"))
