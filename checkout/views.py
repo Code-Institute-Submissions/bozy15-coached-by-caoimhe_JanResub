@@ -6,7 +6,10 @@ from django.views.decorators.http import require_POST
 
 from .forms import OrderForm
 from .models import Order, OrderLineItem
+
 from workouts.models import Workout
+from profiles.models import UserProfile
+from profiles.forms import UserProfileForm
 from cart.contexts import cart_contents
 
 import stripe
@@ -124,8 +127,31 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY,
         )
 
-        # Create the order form
-        order_form = OrderForm()
+        # Populate the order form with the data from user profile
+        if request.user.is_authenticated:
+            try:
+                # Get the user profile
+                profile = UserProfile.objects.get(user=request.user)
+                # Populate the order form with the data from user profile
+                order_form = OrderForm(initial={
+                    "full_name": profile.user.get_full_name(),
+                    "email": profile.user.email,
+                    "phone_number": profile.default_phone_number,
+                    "street_address1": profile.default_street_address1,
+                    "street_address2": profile.default_street_address2,
+                    "town_or_city": profile.default_town_or_city,
+                    "postcode": profile.default_postcode,
+                    "county": profile.default_county,
+                    "country": profile.default_country, 
+                })
+            # If the user does not have a profile
+            except UserProfile.DoesNotExist:
+                # Create an empty order form
+                order_form = OrderForm()
+        else:
+            # Create the order form
+            order_form = OrderForm()
+        
 
     # if public key is not set
     if not stripe_public_key:
@@ -155,6 +181,31 @@ def checkout_success(request, order_number):
     save_info = request.session.get("save_info")
     # Get order
     order = get_object_or_404(Order, order_number=order_number)
+
+    # Get user if logged in
+    if request.user.is_authenticated:
+        profile = UserProfile.objects.get(user=request.user)
+        # Save the user's info to profile
+        order.user_profile = profile
+        order.save()
+
+        # If user has checked the box to save info
+        if save_info:
+            profile_data = {
+                "default_email": save_info["email"],
+                "default_phone_number": save_info["phone_number"],
+                "default_country": save_info["country"],
+                "default_postcode": save_info["postcode"],
+                "default_town_or_city": save_info["town_or_city"],
+                "default_street_address1": save_info["street_address1"],
+                "default_street_address2": save_info["street_address2"],
+                "default_county": save_info["county"],
+            }
+            # Update the user profile
+            user_profile_form = UserProfileForm(profile_data, instance=profile)
+            if user_profile_form.is_valid():
+                user_profile_form.save()
+
     messages.success(
         request,
         f"Order successfully processed! \

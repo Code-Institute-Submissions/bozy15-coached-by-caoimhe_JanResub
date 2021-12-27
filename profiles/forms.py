@@ -16,6 +16,7 @@ class UserProfileForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         # Change the labels
         placeholders = {
+            "default_full_name": "Full Name",
             "default_email": "Email Address",
             "default_phone_number": "Phone Number",
             "default_postcode": "Postcode",

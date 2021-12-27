@@ -15,6 +15,7 @@ class UserProfile(models.Model):
     # One user profile per user
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     # User default fields
+    default_full_name = models.CharField(max_length=50, null=True, blank=True, editable=False)
     default_email = models.EmailField(max_length=254, null=True, blank=True)
     default_phone_number = models.CharField(max_length=20, null=True, blank=True)
     default_street_address1 = models.CharField(max_length=80, null=True, blank=True)

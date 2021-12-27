@@ -17,7 +17,7 @@ class OrderAdmin(admin.ModelAdmin):
     # Display these fields when viewing an order
     fields = (
         "order_number",
-        "user",
+        "user_profile",
         "date",
         "full_name",
         "email",
