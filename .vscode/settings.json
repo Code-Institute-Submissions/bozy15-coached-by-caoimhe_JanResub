@@ -43,7 +43,6 @@
    "spellright.documentTypes": [
       "markdown",
       "latex",
-      "plaintext",
       "json"
    ]
 }

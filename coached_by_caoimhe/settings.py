@@ -115,8 +115,6 @@ SITE_ID = (
     1  # Specifies the ID of the Site object to use when configuring the site object.
 )
 
-# Temporarily log emails to console to get confirmation links
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 # Allow authentication via email or username
 ACCOUNT_AUTHENTICATION_METHOD = "username_email"
@@ -229,3 +227,16 @@ STRIPE_PUBLIC_KEY = os.environ.get("STRIPE_PUBLIC_KEY", "")
 STRIPE_SECRET_KEY = os.environ.get("STRIPE_SECRET_KEY", "")
 STRIPE_WH_SECRET = os.environ.get("STRIPE_WH_SECRET", "")
 DEFAULT_FROM_EMAIL = "bozy15@gmail.com"
+
+# Email
+if "DEVELOPMENT" in os.environ:
+    EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+    DEFAULT_FROM_EMAIL = "coachebycaoimhe@gmail.com"
+else:
+    EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+    EMAIL_HOST = "smtp.gmail.com"
+    EMAIL_PORT = 587
+    DEFAULT_FROM_EMAIL = os.environ.get("EMAIL_HOST_USER", "")
+    EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER", "")
+    EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD", "")
+    EMAIL_USE_TLS = True
