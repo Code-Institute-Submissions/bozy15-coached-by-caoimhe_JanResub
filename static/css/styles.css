@@ -114,12 +114,14 @@ hr {
   text-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.5);
   box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.5);
 }
-
 .nav-link {
-  color: var(--font-colour);
+  font-family: Playfair Display !important;
+  letter-spacing: 0.1rem;
+  font-size: 1.15rem;
+  line-height: normal;
+  color: #fafafa;
   text-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.5);
 }
-
 .nav-link:hover {
   color: var(--uranian-blue);
 }
@@ -138,7 +140,6 @@ input[name="q"]::placeholder {
 .container-position {
   position: relative;
   right: -4rem;
-  bottom: 3rem;
 }
 
 .overlay {
@@ -472,5 +473,18 @@ i.fab.fa-instagram:focus {
 
   body {
     height: calc(100vh - 7.25rem);
+  }
+
+  .nav-link {
+    padding: 0.15rem;
+  }
+
+  .nav-link i.fa-lg {
+    font-size: 1rem;
+  }
+
+  .navbar-toggler {
+    padding: 0.6rem;
+    font-size: 1rem;
   }
 }
