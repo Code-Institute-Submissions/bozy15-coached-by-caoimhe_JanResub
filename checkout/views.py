@@ -133,17 +133,19 @@ def checkout(request):
                 # Get the user profile
                 profile = UserProfile.objects.get(user=request.user)
                 # Populate the order form with the data from user profile
-                order_form = OrderForm(initial={
-                    "full_name": profile.user.get_full_name(),
-                    "email": profile.user.email,
-                    "phone_number": profile.default_phone_number,
-                    "street_address1": profile.default_street_address1,
-                    "street_address2": profile.default_street_address2,
-                    "town_or_city": profile.default_town_or_city,
-                    "postcode": profile.default_postcode,
-                    "county": profile.default_county,
-                    "country": profile.default_country, 
-                })
+                order_form = OrderForm(
+                    initial={
+                        "full_name": profile.user.get_full_name(),
+                        "email": profile.user.email,
+                        "phone_number": profile.default_phone_number,
+                        "street_address1": profile.default_street_address1,
+                        "street_address2": profile.default_street_address2,
+                        "town_or_city": profile.default_town_or_city,
+                        "postcode": profile.default_postcode,
+                        "county": profile.default_county,
+                        "country": profile.default_country,
+                    }
+                )
             # If the user does not have a profile
             except UserProfile.DoesNotExist:
                 # Create an empty order form
@@ -151,7 +153,6 @@ def checkout(request):
         else:
             # Create the order form
             order_form = OrderForm()
-        
 
     # if public key is not set
     if not stripe_public_key:

@@ -44,14 +44,19 @@
                                         <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ workout.name }}">
                                     </a>  
                                 {% endif %}
-                                <div class="card-body">
+                                <div class="card-body txt-shadow">
                                     <p class="card-title">{{ workout.name }}</p>
                                     <p class="card-text">{{ workout.description }}</p>
                                 </div>
                                 <div class="card-footer bg-white rounded-4">
                                     <div class="row">
+                                        <div class="col my-2">
+                                            <a href="{% url 'workout_detail' workout.id %}" class="btn btn-next">View plan Details</a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
                                         <div class="col">
-                                            <p class="lead font-weight-bold">€{{ workout.price }}</p>
+                                            <p class="lead font-weight-bold">Price: €{{ workout.price }}</p>
                                             <!-- Edit and delete buttons -->
                                             {% if request.user.is_superuser %}
                                             <small class="ms-3">
@@ -77,7 +82,7 @@
                             </div>
                         {% endif %}
                         {% if forloop.counter|divisibleby:3 %}
-                            <div class="col-12 d-none d-lg-none d-xl-block mb-5">
+                            <div class="col-12 d-none d-lg-block d-xl-block mb-5">
                                 <hr>
                             </div>
                         {% endif %}

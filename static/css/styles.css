@@ -1,5 +1,5 @@
 /* Google Fonts: https://fonts.google.com/ */
-@import url("https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=Lato:ital@1&family=Playfair+Display:ital,wght@0,500;0,600;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,500;0,600;1,400&display=swap");
 
 :root {
   /* Colours */
@@ -114,15 +114,22 @@ hr {
   text-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.5);
   box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.5);
 }
-.nav-link {
+
+.navbar-dark .navbar-toggler {
+  color: white;
+  border-color: white;
+}
+
+.nav-item .nav-link {
   font-family: Playfair Display !important;
   letter-spacing: 0.1rem;
   font-size: 1.15rem;
-  line-height: normal;
-  color: #fafafa;
+  color: var(--font-colour);
   text-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.5);
 }
-.nav-link:hover {
+.nav-link:hover,
+.nav-link:focus,
+.nav-link:active {
   color: var(--uranian-blue);
 }
 
@@ -154,6 +161,36 @@ input[name="q"]::placeholder {
 }
 /* END Landing page CSS */
 
+/* Workout Cards */
+.card-img,
+.card-img-bottom,
+.card-img-top {
+  width: 90%;
+  border-radius: 25%;
+  box-shadow: -1px 3px 12px -3px black;
+  margin-top: 1px;
+}
+
+.card-title {
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  font-size: 1.15rem;
+  font-weight: bold;
+  font-family: Playfair Display;
+  border-bottom: 1px solid;
+  letter-spacing: 1px;
+}
+
+.card-text:last-child {
+  margin-bottom: 0;
+  letter-spacing: .5px;
+  font-size: .9rem;
+  font-weight: 300;
+  font-family: Lato;
+}
+
+/* END Workout Cards */
+
 /* Bootstrap toasts CSS */
 .message-container {
   position: fixed;
@@ -164,6 +201,7 @@ input[name="q"]::placeholder {
 
 .custom-toast {
   overflow: visible; /* Allows the toast to be scrollable */
+  position: relative;
 }
 
 /* From boutique ado walkthrough project */
@@ -175,7 +213,7 @@ input[name="q"]::placeholder {
   width: 0;
   position: absolute;
   top: -0.5rem;
-  right: 2rem;
+  right: 5rem;
 }
 
 /* colours to match the capper colour - colour codes from bootstrap */
@@ -486,5 +524,14 @@ i.fab.fa-instagram:focus {
   .navbar-toggler {
     padding: 0.6rem;
     font-size: 1rem;
+  }
+
+  .btn-lg {
+    padding: 0.375rem 375rem;
+  }
+  
+  /* From boutique ado walkthrough project */
+  .arrow-up {
+    right: 1rem; /* repositions arrow on sm - md screens */
   }
 }
