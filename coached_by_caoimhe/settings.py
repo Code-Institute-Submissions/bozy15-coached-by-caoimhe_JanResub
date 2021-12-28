@@ -231,7 +231,7 @@ DEFAULT_FROM_EMAIL = "bozy15@gmail.com"
 # Email
 if "DEVELOPMENT" in os.environ:
     EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
-    DEFAULT_FROM_EMAIL = "coachebycaoimhe@gmail.com"
+    DEFAULT_FROM_EMAIL = "bozy15@gmail.com"
 else:
     EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
     EMAIL_HOST = "smtp.gmail.com"
