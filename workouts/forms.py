@@ -1,6 +1,6 @@
 from django import forms
 from .widgets import CustomClearableFileInput
-from .models import Workout, Category
+from .models import Workout, Category, WorkoutReview
 
 
 class WorkoutForm(forms.ModelForm):
@@ -25,3 +25,13 @@ class WorkoutForm(forms.ModelForm):
         # Add a custom CSS class to the category field
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'form-control border-2'
+
+
+class ReviewForm(forms.ModelForm):
+    class Meta:
+        model = WorkoutReview
+        exclude = ("user", "workout", "date")
+        fields = ("review_title", "rating", "comment")
+        widgets = {
+            "comment": forms.Textarea(attrs={"rows": 5, "placeholder": "Write your review here..."})
+        }

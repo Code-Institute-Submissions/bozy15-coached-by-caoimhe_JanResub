@@ -319,6 +319,8 @@ DATABASES = {
 
 - Layout inspired by Bootstrap jumbotron, found [**here**](https://getbootstrap.com/docs/5.1/examples/jumbotron/).
 
+- How to add a functioning review form was from here [**here**](https://www.youtube.com/watch?v=Y5vvGQyHtpM).
+
 ### Image
 
 - The website used to remove the background of an image was found [**here**](https://www.remove.bg/)

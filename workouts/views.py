@@ -1,12 +1,10 @@
-from typing import ContextManager
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.db.models import Q
-from django.db.models.functions import Lower
 
-from .models import Workout, Category
-from .forms import WorkoutForm
+from .models import Workout, Category, WorkoutReview
+from .forms import WorkoutForm, ReviewForm
 
 
 def all_workouts(request):
@@ -54,12 +52,50 @@ def workout_detail(request, workout_id):
     """A view to show individual workout details"""
 
     workout = get_object_or_404(Workout, pk=workout_id)
+    # Pass the review form to the template
+    form = ReviewForm()
+    # get all reviews for this workout
+    reviews = WorkoutReview.objects.filter(workout=workout)
 
     context = {
         "workout": workout,
+        "form": form,
+        "reviews": reviews,
     }
-
     return render(request, "workouts/workout_detail.html", context)
+
+
+@login_required
+def add_review(request, workout_id):
+    """Add a review to a workout"""
+
+    if request.method == "POST":
+        # Get the current workout
+        workout = get_object_or_404(Workout, pk=workout_id)
+        # Create a form instance and populate it with data from the request
+        form = ReviewForm(request.POST)
+        # Check if the form is valid
+        if form.is_valid():
+            # Save the review to the database
+            review = form.save(commit=False)
+            review.workout = workout
+            review.user = request.user
+            review.save()
+            # Display a success message
+            messages.success(request, "Review submitted successfully!")
+            # Redirect to the workout detail page
+            return redirect(
+                reverse("workout_detail", kwargs={"workout_id": workout_id})
+            )
+
+    # If the request was not a POST, display the form to enter details
+    else:
+        form = ReviewForm()
+
+    # Render the template depending on the context
+    return render(
+        request, "workouts/add_review.html", {"form": form, "workout_id": workout_id}
+    )
 
 
 @login_required
@@ -129,8 +165,9 @@ def edit_workout(request, workout_id):
         # If the form is invalid, add an error message
         else:
             messages.error(
-                request, "Failed to update workout. \
-                Please ensure the form is valid."
+                request,
+                "Failed to update workout. \
+                Please ensure the form is valid.",
             )
     else:  # Get the form
         form = WorkoutForm(instance=workout)

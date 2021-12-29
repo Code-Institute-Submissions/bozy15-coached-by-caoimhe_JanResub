@@ -86,7 +86,62 @@
             </div>
         </div>
     </div>
-    <!-- END Workout details page -->
+    <!-- Workout reviews -->
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <h2 class="text-uppercase mb-3">Reviews</h2>
+                <div class="reviews-container text-center">
+                    <!-- Review card -->
+                    {% for review in reviews %}
+                    <div class="card mt-5 rounded-2">
+                        <div class="card-body">
+                            <p class="small text-muted">By {{ review.user }} on {{ review.date|date:"d-m-y" }}</p>
+                            <p class="card-title">{{ review.review_title }}
+                            <i class="fas fa-star"></i>
+                            {{ review.rating }}/5    
+                            </p>
+                            <p class="card-text">{{ review.comment }}</p>
+                        </div>
+                    </div>
+                    {% empty %}
+                    <div class="text-center my-4">
+                        <p class="text-muted">No reviews yet</p>
+                    </div>
+                    {% endfor %}
+                    <!-- END Review card -->
+                </div>
+            </div>
+        </div>
+        <!-- End Workout reviews -->
+        <!-- Review form -->
+        <div id="review-form" class="row">
+            <div class="col-12 col-md-6">
+                {% if request.user.is_authenticated %}
+                <h3 class="text-center my-2 text-uppercase mb-3">Write a review</h3>
+                {% else %}
+                <p class="text-center my-3">
+                    <a class="btn btn-back" href="{% url 'account_signup' %}">Signup</a>
+                    or
+                    <a class="btn btn-landing-page" href="{% url 'account_login' %}">Login</a>
+                    to write a review
+                </p>
+                {% endif %}
+                {% if request.user.is_authenticated %}
+                <form action="{% url 'add_review' workout.id %}" method="post">
+                    {% csrf_token %}
+                    {{ form | crispy }}
+                    <div class="text-center mt-3">
+                        <button class="btn btn-landing-page rounded-2 text-uppercase" type="submit">Submit Review</button>
+                    </div>
+                </form>
+                {% endif %}
+            </div>
+        </div>
+        <!-- End Review form -->
+        <!-- END Workout details page -->
+    </div>
+    
 {% endblock %}
 <!-- End Content block -->
 
