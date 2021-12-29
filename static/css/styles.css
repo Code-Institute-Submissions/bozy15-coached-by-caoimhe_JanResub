@@ -165,8 +165,6 @@ input[name="q"]::placeholder {
 .card-img,
 .card-img-bottom,
 .card-img-top {
-  width: 90%;
-  border-radius: 25%;
   box-shadow: -1px 3px 12px -3px black;
   margin-top: 1px;
 }
@@ -527,7 +525,7 @@ i.fab.fa-instagram:focus {
   }
 
   .btn-lg {
-    padding: 0.375rem 375rem;
+    padding: 0.375rem 0.375rem;
   }
   
   /* From boutique ado walkthrough project */
