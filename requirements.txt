@@ -19,6 +19,7 @@ Django==3.2.8
 django-allauth==0.41.0
 django-countries==7.2.1
 django-crispy-forms==1.13.0
+django-google-maps==0.12.4
 django-storages==1.12.3
 dnspython==2.1.0
 Flask==2.0.1

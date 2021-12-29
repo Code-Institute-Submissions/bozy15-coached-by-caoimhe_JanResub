@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     "crispy_forms",
     "crispy_bootstrap5",
     "storages",
+    "django_google_maps",
 ]
 
 MIDDLEWARE = [
@@ -221,13 +222,15 @@ if "USE_AWS" in os.environ:
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-# Stripe
+# Google Maps API key
+GOOGLE_MAPS_API_KEY = os.environ.get("GOOGLE_MAPS_API_KEY")
 
+# Stripe
 STRIPE_CURRENCY = "eur"
 STRIPE_PUBLIC_KEY = os.environ.get("STRIPE_PUBLIC_KEY", "")
 STRIPE_SECRET_KEY = os.environ.get("STRIPE_SECRET_KEY", "")
 STRIPE_WH_SECRET = os.environ.get("STRIPE_WH_SECRET", "")
-#
+
 
 # Email
 if "DEVELOPMENT" in os.environ:

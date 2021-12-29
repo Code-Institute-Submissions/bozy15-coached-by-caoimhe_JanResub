@@ -313,6 +313,8 @@ DATABASES = {
 
 - How to add dropdown content in markdown was found [here](https://dev.to/asyraf/how-to-add-dropdown-in-markdown-o78).
 
+- Assistance with creating the contact form was found [**here**](https://ordinarycoders.com/blog/article/build-a-django-contact-form-with-email-backend)
+
 ### Image
 
 - The website used to remove the background of an image was found [**here**](https://www.remove.bg/)

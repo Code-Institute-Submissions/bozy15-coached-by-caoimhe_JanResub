@@ -20,7 +20,7 @@
 <!-- Content block -->
 {% block content %}
 <div class="overlay"></div>
-<div class="container text-dark">
+<div class="container txt-shadow text-dark">
     <div class="row">
         <div class="col text-center">
             <hr>
@@ -29,11 +29,67 @@
         </div>
     </div>
     <div class="row">
-        <form action="{% url 'contact_form' %}" method="post">
-            {% csrf_token %}
-            {{ form | crispy }}
-            <button type="submit">Submit</button>
-        </form>
+        <div class="col-12 col-md-6 mx-auto">
+            <h3>Where to find us</h3>
+            <!-- Google Map -->
+            <div class="map-container">
+                <div id="map" class="map">
+                    <iframe loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJYwcDYh9lZ0gRoH8xl6nHAAo&key={{google_maps_api_key}}"></iframe>
+                </div>
+            </div>
+        </div>
+        <!-- END Google Map -->
+        <div class="col-12 col-md-6 text-center">
+            <h3>Contact Details</h3>
+            <p>
+                <i class="fas fa-map-marker-alt"></i>
+                <span>
+                    <strong>Address:</strong>
+                    <br>
+                    <span>
+                        <strong>
+                            Kilcock, Commons East, Co. Kildare
+                        </strong>
+                    </span>
+                </span>
+            </p>
+            <p>
+                <i class="fas fa-phone"></i>
+                <span>
+                    <strong>Phone:</strong>
+                    <br>
+                    <span>
+                        <strong>
+                            083-844-8444
+                        </strong>
+                    </span>
+                </span>
+            </p>
+            <p>
+                <i class="fas fa-envelope"></i>
+                <span>
+                    <strong>Email:</strong>
+                    <br>
+                    <span>
+                        <strong>
+                            coachedbycaoimhe@gmail.com
+                        </strong>
+                    </span>
+                </span>
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-6 mx-auto">
+            <p class="lead text-center">
+                If you have any questions or comments, please feel free to contact us.
+            </p>
+            <form action="{% url 'contact_form' %}" method="post">
+                {% csrf_token %}
+                {{ form | crispy }}
+                <button type="submit">Submit</button>
+            </form>
+        </div>
     </div>
 </div>
 <!-- END Loading overlay -->
@@ -41,6 +97,7 @@
 <!-- End Content block -->
 <!-- postload_js block -->
 {% block postload_js %}
-{
+{{ block.super }}
+
 {% endblock %}
 <!-- END postload_js block -->

@@ -259,6 +259,14 @@ input[name="q"]::placeholder {
 }
 /* END Bootstrap toasts CSS */
 
+/* Google map CSS */
+iframe {
+  border: 0;
+  max-width: 100%;
+  height: 26vh;
+}
+/* END Google map CSS */
+
 /* Allauth CSS */
 /* From Boutique ado walkthrough project */
 .allauth-form-inner-content {
