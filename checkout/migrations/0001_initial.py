@@ -10,38 +10,85 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('workouts', '0005_auto_20211215_1751'),
+        ("workouts", "0005_auto_20211215_1751"),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Order',
+            name="Order",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('order_number', models.CharField(editable=False, max_length=32)),
-                ('full_name', models.CharField(max_length=50)),
-                ('email', models.EmailField(max_length=254)),
-                ('phone_number', models.CharField(max_length=20)),
-                ('country', models.CharField(max_length=40)),
-                ('postcode', models.CharField(blank=True, max_length=20, null=True)),
-                ('town_or_city', models.CharField(max_length=40)),
-                ('street_address1', models.CharField(max_length=80)),
-                ('street_address2', models.CharField(blank=True, max_length=80, null=True)),
-                ('county', models.CharField(blank=True, max_length=80, null=True)),
-                ('date', models.DateTimeField(auto_now_add=True)),
-                ('total', models.DecimalField(decimal_places=2, default=0, max_digits=10)),
-                ('user', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='orders', to=settings.AUTH_USER_MODEL)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("order_number", models.CharField(editable=False, max_length=32)),
+                ("full_name", models.CharField(max_length=50)),
+                ("email", models.EmailField(max_length=254)),
+                ("phone_number", models.CharField(max_length=20)),
+                ("country", models.CharField(max_length=40)),
+                ("postcode", models.CharField(blank=True, max_length=20, null=True)),
+                ("town_or_city", models.CharField(max_length=40)),
+                ("street_address1", models.CharField(max_length=80)),
+                (
+                    "street_address2",
+                    models.CharField(blank=True, max_length=80, null=True),
+                ),
+                ("county", models.CharField(blank=True, max_length=80, null=True)),
+                ("date", models.DateTimeField(auto_now_add=True)),
+                (
+                    "total",
+                    models.DecimalField(decimal_places=2, default=0, max_digits=10),
+                ),
+                (
+                    "user",
+                    models.ForeignKey(
+                        blank=True,
+                        null=True,
+                        on_delete=django.db.models.deletion.SET_NULL,
+                        related_name="orders",
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
             ],
         ),
         migrations.CreateModel(
-            name='OrderLineItem',
+            name="OrderLineItem",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('quantity', models.IntegerField(default=0)),
-                ('lineitem_total', models.DecimalField(decimal_places=2, editable=False, max_digits=6)),
-                ('order', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='lineitems', to='checkout.order')),
-                ('workout', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='workouts.workout')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("quantity", models.IntegerField(default=0)),
+                (
+                    "lineitem_total",
+                    models.DecimalField(decimal_places=2, editable=False, max_digits=6),
+                ),
+                (
+                    "order",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="lineitems",
+                        to="checkout.order",
+                    ),
+                ),
+                (
+                    "workout",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="workouts.workout",
+                    ),
+                ),
             ],
         ),
     ]

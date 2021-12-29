@@ -20,13 +20,13 @@ from django.conf.urls.static import static
 
 
 urlpatterns = [
-    path("admin/", admin.site.urls), # admin site path
-    path("accounts/", include("allauth.urls")), # allauth path
-    path("", include("home.urls")), # home page path
-    path("workouts/", include("workouts.urls")), # workouts page path
-    path("cart/", include("cart.urls")), # workouts page path
-    path("checkout/", include("checkout.urls")), # checkout page path
-    path("profile/", include("profiles.urls")), # checkout page path
-    path("contact/", include("contact.urls")), # contact page path
-    path("about/", include("about.urls")), # contact page path
+    path("admin/", admin.site.urls),  # admin site path
+    path("accounts/", include("allauth.urls")),  # allauth path
+    path("", include("home.urls")),  # home page path
+    path("workouts/", include("workouts.urls")),  # workouts page path
+    path("cart/", include("cart.urls")),  # workouts page path
+    path("checkout/", include("checkout.urls")),  # checkout page path
+    path("profile/", include("profiles.urls")),  # checkout page path
+    path("contact/", include("contact.urls")),  # contact page path
+    path("about/", include("about.urls")),  # contact page path
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

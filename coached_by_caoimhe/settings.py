@@ -201,11 +201,15 @@ if "USE_AWS" in os.environ:
     }
 
     # Bucket config
-    AWS_STORAGE_BUCKET_NAME = "coached-by-caoimhe" # Name of the bucket
-    AWS_S3_REGION_NAME = "eu-west-1" # Name of the region
-    AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID") # AWS_ACCESS_KEY_ID
-    AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY") # AWS_SECRET_ACCESS_KEY
-    AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"  # Domain of the bucket
+    AWS_STORAGE_BUCKET_NAME = "coached-by-caoimhe"  # Name of the bucket
+    AWS_S3_REGION_NAME = "eu-west-1"  # Name of the region
+    AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")  # AWS_ACCESS_KEY_ID
+    AWS_SECRET_ACCESS_KEY = os.environ.get(
+        "AWS_SECRET_ACCESS_KEY"
+    )  # AWS_SECRET_ACCESS_KEY
+    AWS_S3_CUSTOM_DOMAIN = (
+        f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"  # Domain of the bucket
+    )
 
     # Static files
     STATICFILES_STORAGE = "custom_storages.StaticStorage"

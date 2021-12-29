@@ -129,7 +129,8 @@ def edit_workout(request, workout_id):
         # If the form is invalid, add an error message
         else:
             messages.error(
-                request, "Failed to update workout. Please ensure the form is valid."
+                request, "Failed to update workout. \
+                Please ensure the form is valid."
             )
     else:  # Get the form
         form = WorkoutForm(instance=workout)
@@ -155,7 +156,7 @@ def delete_workout(request, workout_id):
         return redirect(reverse("home"))
 
     # Get the workout to be deleted
-    workout = get_object_or_404(Workout, pk=workout_id)  
+    workout = get_object_or_404(Workout, pk=workout_id)
     # Delete the workout from the database
     workout.delete()
     # Add a success message

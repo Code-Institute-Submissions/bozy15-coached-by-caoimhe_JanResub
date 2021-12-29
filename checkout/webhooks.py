@@ -9,6 +9,7 @@ import stripe
 
 # From stripe docs and boutique-ado checkout\webhooks.py:
 
+
 @require_POST
 @csrf_exempt
 def webhook(request):
