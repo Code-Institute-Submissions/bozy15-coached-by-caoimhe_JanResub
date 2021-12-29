@@ -1,0 +1,68 @@
+<!-- Extends the base HTML -->
+{% extends "base.html" %}
+<!-- load static files -->
+{% load static %}
+
+{% block title %}About{% endblock %}
+
+<!-- Block page header -->
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+<!-- END page header -->
+
+<!-- Content block -->
+{% block content %}
+    <div class="container py-4">
+        <div class="row text-dark">
+            <div class="col-12 w-100">
+                <hr>
+                <h1 class="display-4 display-md-3 text-center">About</h1>
+                <hr>
+            </div>
+        </div>
+        <div class="p-5 mb-4 bg-dark rounded-2">
+            <div class="container-fluid py-4">
+                <div class="row">
+                    <h2 class="display-4 text-center text-white">What I do</h2>
+                    <img class="col-md-4 img-fluid" src="{% static 'images/homepage-img.png' %}"
+                        alt="image of site owner/coach">
+                    <p class="col-md-8 mt-4 fs-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque
+                        exercitationem
+                        consequuntur ad quia earum tempora veniam amet doloribus? Dolor placeat fugit tenetur natus
+                        voluptates
+                        omnis earum exercitationem aspernatur? Magnam, accusamus!
+                    </p>
+                    <div class="text-center"><a href="{% url 'workouts' %}"
+                            class="btn btn-outline-light w-50 text-uppercase">See plans</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-md-stretch">
+            <div class="col-md-6">
+                <div class="h-100 p-5 text-dark bg-white rounded-3">
+                    <h2 class="display-4 text-center">My goal</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque exercitationem
+                        consequuntur ad quia earum tempora veniam amet doloribus? Dolor placeat fugit tenetur natus voluptates
+                        omnis earum exercitationem aspernatur? Magnam, accusamus!
+                    </p>
+                    <a href="{% url 'contact_form' %}" class="btn mx- btn-outline-dark text-uppercase">get in touch?</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="h-100 p-5 text-light bg-dark rounded-3">
+                    <h2 class="display-4 text-center">What I do for you!</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque exercitationem
+                        consequuntur ad quia earum tempora veniam amet doloribus? Dolor placeat fugit tenetur natus voluptates
+                        omnis earum exercitationem aspernatur? Magnam, accusamus!
+                    </p>
+                    <a href="{% url 'workouts' %}" class="btn btn-outline-light">See Plans</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

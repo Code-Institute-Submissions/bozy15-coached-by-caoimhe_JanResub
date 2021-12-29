@@ -53,11 +53,11 @@ INSTALLED_APPS = [
     "checkout",
     "profiles",
     "contact",
+    "about",
     # "django_extensions",
     "crispy_forms",
     "crispy_bootstrap5",
     "storages",
-    "django_google_maps",
 ]
 
 MIDDLEWARE = [

@@ -313,7 +313,11 @@ DATABASES = {
 
 - How to add dropdown content in markdown was found [here](https://dev.to/asyraf/how-to-add-dropdown-in-markdown-o78).
 
-- Assistance with creating the contact form was found [**here**](https://ordinarycoders.com/blog/article/build-a-django-contact-form-with-email-backend)
+- Assistance with creating the contact form was found [**here**](https://ordinarycoders.com/blog/article/build-a-django-contact-form-with-email-backend).
+
+- The embedded google map was created here [**here**](https://developers.google.com/maps/documentation/embed/map-generator).
+
+- Layout inspired by Bootstrap jumbotron, found [**here**](https://getbootstrap.com/docs/5.1/examples/jumbotron/).
 
 ### Image
 

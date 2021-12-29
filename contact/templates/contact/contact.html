@@ -1,4 +1,4 @@
-<!-- Entend the base.html template -->
+<!-- Extend the base.html template -->
 {% extends "base.html" %}
 <!-- Load static files -->
 {% load static %}
@@ -29,12 +29,12 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-12 col-md-6 mx-auto">
+        <div class="col-12 col-md-6 text-center">
             <h3>Where to find us</h3>
             <!-- Google Map -->
             <div class="map-container">
                 <div id="map" class="map">
-                    <iframe loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJYwcDYh9lZ0gRoH8xl6nHAAo&key={{google_maps_api_key}}"></iframe>
+                    <iframe width="600" height="400" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJYwcDYh9lZ0gRoH8xl6nHAAo&key={{google_maps_api_key}}"></iframe>
                 </div>
             </div>
         </div>
