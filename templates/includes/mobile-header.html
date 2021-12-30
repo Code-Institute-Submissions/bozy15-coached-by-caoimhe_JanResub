@@ -26,14 +26,14 @@
     <!-- END Mobile search bar -->
     <!-- Mobile Account dropdown -->
     <li class="list-inline-item dropdown">
-        <a href="#" class="nav-link d-block d-lg-none" id="account-options" data-toggle="dropdown" aria-haspopup="true"
+        <a href="#" class="nav-link d-block d-lg-none" id="user-options" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">
             <div class="text-center">
                 <div><i class="fas fa-user fa-lg"></i></div>
                 <p class="my-0">Account</p>
             </div>
         </a>
-        <div class="dropdown-menu border-1" aria-labelledby="account-options">
+        <div class="dropdown-menu border-1" aria-labelledby="user-options">
             <!-- if user is authenticated, then display -->
             {% if request.user.is_authenticated %}
             <!-- if user is admin, display -->

@@ -59,7 +59,7 @@
                                 {% csrf_token %}
                                 <input type="hidden" data-item_id="{{ item.item_id }}" name="workout_id" value="{{ item.workout.id }}">
                                 <button type="submit"  id="remove_{{ item.item_id }}" class="remove-item btn btn-danger">Remove item</button>
-                            <!-- <a data-item_id="{{ item.workout.item_id }}" class="remove-item btn btn-sm btn-danger">Remove Plan</a> -->
+                            </form>
                         </div> 
                     </div>
                     <hr>
@@ -115,7 +115,7 @@
 <!-- postloadjs block -->
 {% block postload_js %}
 {{ block.super }}
-    <script type="text/javascript">
+    <script>
         // Remove item from cart
         $(".remove-item").click((e) => {
             e.preventDefault();
