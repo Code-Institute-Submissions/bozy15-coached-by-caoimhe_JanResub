@@ -1,4 +1,4 @@
-<!-- Entend the base.html template -->
+<!-- Extend the base.html template -->
 {% extends "base.html" %}
 <!-- Load static files -->
 {% load static %}
@@ -18,11 +18,15 @@
     <div class="container-fluid text-center h-100">
         <div class="home-container d-flex justify-content-center w-100 h-100 p3 mx-auto flex-column">
             <div class="px-3">
-                <h2 class="txt-shadow display-5 display-md-3 fw-light">Begin your transformation today</h2>
-                <p class="txt-shadow fw-light fs-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque exercitationem
+                <h2 class="txt-shadow quote-font mb-5 fw-light">
+                    The only investment you won't regret is, <br>
+                    the one you make on yourself.
+                </h2>
+                <p class="txt-shadow fw-light fs-3">
+                    Begin your transformation today!
                 </p>
                 <p>
-                    <a href="{% url 'workouts' %}" class="btn btn-lg btn-landing-page rounded-3 text-uppercase py-3">Learn more</a>
+                    <a href="{% url 'workouts' %}" class="btn btn-lg btn-landing-page rounded-3 text-uppercase py-3">See plans</a>
                 </p>
             </div>
         </div>

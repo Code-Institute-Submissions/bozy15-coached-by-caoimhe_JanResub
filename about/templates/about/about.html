@@ -25,42 +25,52 @@
                 <hr>
             </div>
         </div>
-        <div class="p-5 mb-4 bg-dark rounded-2">
-            <div class="container-fluid py-4">
+        <div class="p-5 mb-4">
+            <div class="container-fluid rounded-2 about-bg-color py-4">
                 <div class="row">
-                    <h2 class="display-4 text-center text-white">What I do</h2>
+                    <h2 class="display-4 text-center">Hi I'm Caoimhe</h2>
                     <img class="col-md-4 img-fluid" src="{% static 'images/homepage-img.png' %}"
                         alt="image of site owner/coach">
-                    <p class="col-md-8 mt-4 fs-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque
-                        exercitationem
-                        consequuntur ad quia earum tempora veniam amet doloribus? Dolor placeat fugit tenetur natus
-                        voluptates
-                        omnis earum exercitationem aspernatur? Magnam, accusamus!
+                    <p class="col-md-8 mt-4 px-4 fs-5">
+                        Coached by Caoimhe is a female driven, online and in person personal training business.
+                        <br class="mb-4">
+                        I am a qualified personal trainer with experience in pre and post-natal fitness,
+                        passionate about helping woman reach their fitness and diet goals. Whether you're
+                        a busy mother/professional or a new mother, I've a plan for you. 
+                        <br class="mb-3">
+                        Lets start this journey together to a new you! 
                     </p>
-                    <div class="text-center"><a href="{% url 'workouts' %}"
-                            class="btn btn-outline-light w-50 text-uppercase">See plans</a></div>
+                    <div class="text-center"><a href="{% url 'contact_form' %}"
+                            class="btn btn-back w-50 text-uppercase">Reach out to me</a></div>
                 </div>
             </div>
         </div>
         <div class="row align-items-md-stretch">
-            <div class="col-md-6">
-                <div class="h-100 p-5 text-dark bg-white rounded-3">
+            <div class="col-md-6 mb-3 mb-md-0">
+                <div class="h-100 p-5 d-grid align-items-baseline my-goal-bg rounded-3">
                     <h2 class="display-4 text-center">My goal</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque exercitationem
-                        consequuntur ad quia earum tempora veniam amet doloribus? Dolor placeat fugit tenetur natus voluptates
-                        omnis earum exercitationem aspernatur? Magnam, accusamus!
+                    <p>
+                        My goal is to help guide you to a healthier lifestyle and achieve your fitness achievements.
                     </p>
-                    <a href="{% url 'contact_form' %}" class="btn mx- btn-outline-dark text-uppercase">get in touch?</a>
+                    <p>
+                        I want to show you that even a small amount of exercise can have a big impact on your health both physical and
+                        mental.
+                    </p>
+                    <a href="{% url 'contact_form' %}" class="btn btn-landing-page text-uppercase">get in touch?</a>
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="h-100 p-5 text-light bg-dark rounded-3">
+                <div class="h-100 p-5 text-light about-bg-color rounded-3">
                     <h2 class="display-4 text-center">What I do for you!</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque exercitationem
-                        consequuntur ad quia earum tempora veniam amet doloribus? Dolor placeat fugit tenetur natus voluptates
-                        omnis earum exercitationem aspernatur? Magnam, accusamus!
+                    <p>
+                        I offer a range of services to help you achieve your fitness goals.
+                        There is a personalized plan for each client. Along with friendly support and advice,
+                        I also offer a range of classes to help you achieve your goals.
                     </p>
-                    <a href="{% url 'workouts' %}" class="btn btn-outline-light">See Plans</a>
+                    <p>
+                        Why not hit the button below and see what I can do for you!
+                    </p>
+                    <a href="{% url 'workouts' %}" class="btn btn-back">See Plans</a>
                 </div>
             </div>
         </div>

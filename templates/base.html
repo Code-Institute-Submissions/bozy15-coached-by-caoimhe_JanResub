@@ -61,9 +61,9 @@
     <header class="container-fluid nav-bg-color fixed-top">
         <div id="topnav" class="row pt-lg-2 d-none d-lg-flex">
             <!-- Site logo name -->
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center">
                 <a class="nav-link " href="{% url 'home' %}">
-                    <h2 class="site-logo-colour my-0"><span class="logo-font-family">Coached By</span><br><span
+                    <h2 class="site-logo-colour my-0"><span class="logo-font-family text-capitalize">Coached By</span><br><span
                             class="logo-coach-name">Caoimhe</span></h2>
                 </a>
             </div>
@@ -176,7 +176,7 @@
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="about-footer">
                         <div class="logo-footer">
-                            <p class="logo-font-family">Coached By</p>
+                            <p class="logo-font-family text-capitalize">Coached By</p>
                             <p class="logo-coach-name-footer">CAOIMHE</p>
                         </div>
                         <p class="footer-text">Move your body and shape your future today!</p>
@@ -189,8 +189,10 @@
                             <li><a class="footer-anchor" href="{% url 'home' %}">Home</a></li>
                             <li><a class="footer-anchor" href="{% url 'about' %}">About</a></li>
                             <li><a class="footer-anchor" href="{% url 'contact_form' %}">Contact</a></li>
+                            {% if not request.user.is_authenticated %}
                             <li><a class="footer-anchor" href="{% url 'account_login' %}">Login</a></li>
                             <li><a class="footer-anchor" href="{% url 'account_signup' %}">Register</a></li>
+                            {% endif %}
                         </ul>
                     </div>
                 </div>

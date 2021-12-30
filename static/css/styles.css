@@ -37,7 +37,7 @@ body {
     var(--ultramarine-blue),
     var(--vivid-sky-blue)
   );
-  background-size: 400% 400%;
+  background-size: 400% 800%;
   animation: gradient 25s ease infinite;
 }
 /* From: https://www.sliderrevolution.com/resources/css-animated-background/ */
@@ -63,6 +63,12 @@ body {
   justify-content: center;
   height: 1.5rem;
   width: 1.5rem;
+}
+
+/* landing page quote */
+.txt-shadow.quote-font.mb-5.fw-light {
+  font-family: Corinthia;
+  font-size: 4rem;
 }
 
 /* colours the list-style on workout details */
@@ -112,7 +118,7 @@ hr {
   text-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.5);
 }
 
-.logo-font-family {
+.logo-font-family.text-capitalize {
   /* Styles the "coached by part of logo" */
   font-family: Corinthia;
   font-size: 3rem;
@@ -163,6 +169,7 @@ hr {
   font-size: 1.15rem;
   color: var(--font-colour);
   text-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
 }
 .navbar-dark .navbar-nav .nav-link:focus,
 .navbar-dark .navbar-nav .nav-link:hover,
@@ -220,7 +227,6 @@ input[name="q"]::placeholder {
 .card-img-bottom,
 .card-img-top {
   box-shadow: -1px 3px 12px -3px black;
-  margin-top: 1px;
 }
 
 .card-body {
@@ -269,6 +275,20 @@ input[name="q"]::placeholder {
 }
 
 /* END Workout Cards */
+
+/* About Page */
+
+.container-fluid.about-bg-color.py-4,
+.h-100.p-5.text-light.about-bg-color.rounded-3 {
+  background: #2222228c;
+  border: 1px solid var(--flickr-pink);
+}
+
+.my-goal-bg {
+  background: #f7258570;
+  border: 1px solid var(--ultramarine-blue);
+}
+/* END About Page*/
 
 /* Bootstrap toasts CSS */
 .message-container {
