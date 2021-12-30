@@ -9,6 +9,7 @@ class UserProfileForm(forms.ModelForm):
         model = UserProfile
         # exclude the user field, can't be edited
         exclude = ("user",)
+        fields = "__all__"
 
     def __init__(self, *args, **kwargs):
         """Add placeholder and classes, remove labels and set autofocus on first field"""

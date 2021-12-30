@@ -19,31 +19,30 @@
 
 <!-- Main content -->
 {% block content %}
-<div class="overlay"></div>
 <!-- Checkout success page -->
 <div class="container">
     <div class="row">
         <div class="col">
             <hr>
-            <h2>Thank You</h2>
+            <h1 class="display-4 display-md-3 text-uppercase text-light text-center">Thank You</h1>
             <hr>
-            <p class="text-dark">Your order information is below and a confirmation email has been sent to <strong>{{ order.email }}</strong></p>
+            <p class="text-center">Your order information is below and a confirmation email has been sent to <strong>{{ order.email }}</strong></p>
         </div>
     </div>
     <!-- Order information -->
-    <div class="row text-dark">
+    <div class="row txt-shadow justify-content-center">
         <div class="col-12 col-lg-7">
             <div class="order-confirmation-wrapper p-2 border">
                 <div class="row">
                     <div class="col">
-                        <small class="text-muted fs-5">Order info</small>
+                        <small class="sign-in-link fs-5">Order info<hr class="w-25 mt-0 mb-2"></small>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12 col-md-4">
                         <p class="mb-1">Order Number</p>
                     </div>
-                    <div class="col-12 col-md-8 text-md-right">
+                    <div class="col-12 col-md-8 text-md-end">
                         <p class="mb-1">{{ order.order_number }}</p>
                     </div>
                 </div>
@@ -51,19 +50,19 @@
                     <div class="col-12 col-md-4">
                         <p class="mb-1">Order Date</p>
                     </div>
-                    <div class="col-12 col-md-8 text-md-right">
+                    <div class="col-12 col-md-8 text-md-end">
                         <p class="mb-1">{{ order.date }}</p>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col"><small class="text-muted fs-5 mb-1">Order Details</small></div>
+                    <div class="col"><small class="fs-5 sign-in-link mb-1">Order Details<hr class="w-25 mt-0 mb-2"></small></div>
                 </div>
                 <!-- Customer name -->
                 <div class="row">
                     <div class="col-12 col-md-4">
                         <p class="mb-1">Full Name</p>
                     </div>
-                    <div class="col-12 col-md-8 text-md-right">
+                    <div class="col-12 col-md-8 text-md-end">
                         <p class="mb-1">{{ order.full_name }}</p>
                     </div>
                 </div>
@@ -75,7 +74,7 @@
                             {{ item.workout.name }}
                         </p>
                     </div>
-                    <div class="col-12 col-md-8 text-md-right">
+                    <div class="col-12 col-md-8 text-md-end">
                         <p class="mb-0">€{{ item.workout.price }}</p>
                     </div>
                 </div>
@@ -85,7 +84,7 @@
                             Plan Duration
                         </p>
                     </div>
-                    <div class="col-12 col-md-8 text-md-right">
+                    <div class="col-12 col-md-8 text-md-end">
                         <p class="mb-2">{{ item.workout.plan_duration }}</p>
                     </div>
                 </div>
@@ -93,14 +92,14 @@
                 <!-- Billing info -->
                 <div class="row">
                     <div class="col">
-                        <small class="text-muted fs-5">Billing Info:</small>
+                        <small class="sign-in-link fs-5">Billing Info:<hr class="w-25 mt-0 mb-2"></small>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12 col-md-4">
                         <p class="mb-1">Total Price</p>
                     </div>
-                    <div class="col-12 col-md-8 text-md-right">
+                    <div class="col-12 col-md-8 text-md-end">
                         <p class="mb-1">{{ order.total }}</p>
                     </div>
                 </div>
@@ -110,17 +109,16 @@
         <!-- END Order information -->
         <!-- Action buttons -->
         <div class="row">
-            <div class="col-12 col-lg-7 text-right">
-                <p class="my-1">A friend or family interested in started? Click the button to go back to workouts</p>
-                {% if from_profile %}
-                <a href="{% url 'profile' %}" class="btn rounded-2 my-3">
+            <div class="col-12 col-lg-7 text-end">
+                {% if order.user_profile %}
+                <a href="{% url 'profile' %}" class="btn btn-back rounded-2 my-3">
                     <span class="icon me-2">
                         <i class="fas fa-angle-left"></i>
                     </span>
                     <span class="text-uppercase">Back to Profile</span>
                 </a>
                 {% else %}
-                <a href="{% url 'workouts' %}" class="btn rounded-0 my-3">
+                <a href="{% url 'workouts' %}" class="btn btn-landing-page rounded-0 my-3">
                     <span class="icon me-2">
                         <i class="fas fa-dumbbell"></i>
                     </span>

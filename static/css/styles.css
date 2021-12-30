@@ -65,6 +65,11 @@ body {
   width: 1.5rem;
 }
 
+/* colours the list-style on workout details */
+li.mb-3::marker {
+  color: var(--flickr-pink);
+}
+
 .h-100 {
   height: 100vh;
 }
@@ -79,6 +84,16 @@ hr {
   height: 0.2rem;
   background: #000;
   margin: 1rem 0;
+}
+
+.sign-in-link {
+  color: var(--flickr-pink);
+  text-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.5);
+}
+
+.sign-in-link:hover {
+  color: var(--font-colour);
+  text-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.5);
 }
 /* ---- END CUSTOM CSS CLASSES ---- */
 
@@ -124,7 +139,7 @@ hr {
 }
 
 .btn-landing-page:hover {
-  background-color: var(--flickr-pink);
+  background-color: var(--ultramarine-blue);
   border-color: var(--vivid-sky-blue);
   color: var(--font-colour);
   text-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.5);
@@ -138,6 +153,8 @@ hr {
 .navbar-dark .navbar-toggler {
   color: var(--font-colour);
   border-color: var(--font-colour);
+  position: relative;
+  left: 9%;
 }
 
 .nav-link {
@@ -156,6 +173,26 @@ hr {
 .nav-link:focus,
 .nav-link:active {
   color: var(--flickr-pink);
+}
+
+.dropdown-menu.show {
+  background: var(--eerie-black);
+  max-width: fit-content;
+}
+
+.dropdown-item {
+  color: var(--font-colour);
+  text-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.5);
+}
+
+li.dropdown-item a {
+  color: #f8fbff;
+  text-decoration: underline;
+  text-decoration: none;
+}
+
+li.dropdown-item a:hover {
+  color: #000;
 }
 
 /* Search bar color to match allauth styles */
@@ -186,22 +223,31 @@ input[name="q"]::placeholder {
   margin-top: 1px;
 }
 
+.card-body {
+  background: #f72585bf;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  border-bottom: 1px solid #4cc9f0;
+}
+
 .card-title {
   margin-bottom: 1.5rem;
   text-transform: uppercase;
-  font-size: 1.15rem;
+  font-size: 1.4rem;
   font-weight: bold;
   font-family: Playfair Display;
   border-bottom: 1px solid;
   letter-spacing: 1px;
+  color: var(--font-colour);
 }
 
 .card-text:last-child {
   margin-bottom: 0;
   letter-spacing: 0.5px;
-  font-size: 0.9rem;
+  font-size: 1.25rem;
   font-weight: 300;
   font-family: Lato;
+  color: var(--font-colour);
 }
 
 .btn-back {
@@ -215,7 +261,7 @@ input[name="q"]::placeholder {
 .btn-back:hover,
 .btn-back:focus,
 .btn-back:active {
-  background-color: var(--vivid-sky-blue);
+  background-color: var(--ultramarine-blue);
   border-color: var(--flickr-pink);
   color: var(--font-colour);
   text-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.5);
@@ -294,23 +340,42 @@ input[name="q"]::placeholder {
 }
 /* END Bootstrap toasts CSS */
 
+/* Contact page CSS */
+
 /* Google map CSS */
 iframe {
   border: 0;
   max-width: 100%;
-  height: 26vh;
+  height: 31vh;
 }
-/* END Google map CSS */
+
+/* END Contact page CSS */
+
+/* Profile page CSS */
+a.order-number {
+  color: var(--flickr-pink);
+  font-weight: bold;
+  font-family: Lato;
+  letter-spacing: 0.5px;
+  text-shadow: 0px 1px 2px #000;
+}
+
+a.order-number:hover {
+  color: var(--font-colour);
+}
+
+/* END Profile page CSS */
 
 /* Allauth CSS */
 /* From Boutique ado walkthrough project */
+
 .allauth-form-inner-content {
   text-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.5);
 }
 
 .allauth-form-inner-content p {
   margin-top: 1.5rem; /* mt-4 */
-  color: #6c757d; /* text-secondary */
+  color: var(--font-colour);
 }
 
 .allauth-form-inner-content input {
@@ -366,6 +431,15 @@ iframe {
 .allauth-form-inner-content a {
   color: var(--font-colour); /* text-info */
 }
+
+.allauth-form-inner-content a.sign-up-link {
+  color: var(--flickr-pink);
+  text-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.5);
+}
+
+.allauth-form-inner-content a.sign-up-link:hover {
+  color: var(--font-colour);
+}
 /* END Allauth CSS */
 
 /* Custom widget on workout form CSS */
@@ -393,6 +467,10 @@ iframe {
   background-color: #dc3545;
   border-color: #dc3545;
   border-radius: 0;
+}
+
+textarea.form-control {
+  height: 6rem; /* adjusts the height of the text area */
 }
 
 /* END Custom widget on workout form CSS */

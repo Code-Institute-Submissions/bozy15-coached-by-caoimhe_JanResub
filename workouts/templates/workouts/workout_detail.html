@@ -16,8 +16,8 @@
 {% block content %}
     <!-- Workout details page -->
     <div class="container-fluid text-center txt-shadow">
-        <div class="row d-flex justify-content-center">
-            <div class="col-12 col-md-6 col-lg-4 offset-lg-1">
+        <div class="row d-flex align-items-center justify-content-center">
+            <div class="col-12 col-md-6 col-lg-4">
                 <div class="image-container shadow my-5">
                     <!-- Workout plan image -->
                     {% if workout.image %}
@@ -33,28 +33,29 @@
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-4">
-                <div class="workout-details-container mb-5 mt-md-5">
+                <div class="mb-5 mt-md-5">
                     <!-- name and description -->
-                    <h1 class="workout-name mb-3">{{ workout.name }}</h1>
-                    <p class="workout-description mb-3">{{ workout.description }}</p>
-                    <p class="workout-equipment mb-3">
-                        <span class="workout-details-label">Equipment: </span>
-                        <span class="workout-details-value">{{ workout.equipment_required }}</span>
+                    <h1 class="mb-5">{{ workout.name }} <hr class="mt-0"></h1>
+                    <p class="mb-3 fs-5">{{ workout.description }}</p>
+                    <p class="text-center">
+                        <span class="text-uppercase">Equipment needed:</span>
+                        <br>
+                        <span class="">{{ workout.equipment_required }}</span>
                     </p>
                     <!-- END name and description -->
                     <!-- Duration, weekly checkin and workout length -->
                     <ul>
-                        <li class="workout-duration mb-3">
-                            <span class="workout-details-label">Duration: </span>
-                            <span class="workout-details-value">{{ workout.plan_duration }}</span>
+                        <li class="mb-3">
+                            <span>Duration: </span>
+                            <span>{{ workout.plan_duration }}</span>
                         </li>
-                        <li class="workout-weekly-checkin mb-3">
-                            <span class="workout-details-label">Weekly checkin: </span>
-                            <span class="workout-details-value">{{ workout.weekly_checkin }}</span>
+                        <li class="mb-3">
+                            <span>Weekly checkin: </span>
+                            <span >{{ workout.weekly_checkin }}</span>
                         </li>
-                        <li class="workout-length mb-3">
-                            <span class="workout-details-label">Length: </span>
-                            <span class="workout-details-value">{{ workout.length_of_workout }}</span>
+                        <li class="mb-3">
+                            <span>Length: </span>
+                            <span>{{ workout.length_of_workout }}</span>
                         </li>
                     </ul>
                     <!-- END Duration, weekly checkin and workout length -->
@@ -68,7 +69,7 @@
                         {% csrf_token %}
                         <div class="form-row">
                             <div class="col-12">
-                                <a href="{% url 'workouts' %}" class="btn btn-dark rounded-2 mt-5">
+                                <a href="{% url 'workouts' %}" class="btn btn-back rounded-2 mt-5">
                                     <span class="icon">
                                         <i class="fas fa-chevron-left"></i>
                                     </span>
@@ -87,16 +88,18 @@
     </div>
     <!-- Workout reviews -->
     <div class="container py-5">
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="col-12 col-md-6">
-                <h2 class="text-uppercase mb-3">Reviews</h2>
+                <hr>
+                <h2 class="text-uppercase text-center mb-3">Reviews</h2>
+                <hr>
                 <div class="reviews-container text-center">
                     <!-- Review card -->
                     {% for review in reviews.all %}
                     <div class="card mt-5 rounded-2">
                         <div class="card-body">
-                            <p class="small text-muted">By {{ review.user }} on {{ review.date|date:"d-m-y" }}</p>
-                            <p class="card-title">{{ review.review_title }}
+                            <p class="small text-start">By {{ review.user }} on {{ review.date|date:"d-m-y" }}</p>
+                            <p class="card-title text-capitalize">{{ review.review_title }}
                             <i class="fas fa-star"></i>
                             {{ review.rating }}/5    
                             </p>
@@ -105,7 +108,8 @@
                     </div>
                     {% empty %}
                     <div class="text-center my-4">
-                        <p class="text-muted">No reviews yet</p>
+                        <p class="fs-5">No reviews yet</p>
+                        <hr>
                     </div>
                     {% endfor %}
                     <!-- END Review card -->
@@ -114,10 +118,10 @@
         </div>
         <!-- End Workout reviews -->
         <!-- Review form -->
-        <div id="review-form" class="row">
+        <div id="review-form" class="row justify-content-center">
             <div class="col-12 col-md-6">
                 {% if request.user.is_authenticated %}
-                <h3 class="text-center my-2 text-uppercase mb-3">Write a review</h3>
+                <h3 class="text-center my-2 text-uppercase mb-3">Leave a review</h3>
                 {% else %}
                 <p class="text-center my-3">
                     <a class="btn btn-back" href="{% url 'account_signup' %}">Signup</a>

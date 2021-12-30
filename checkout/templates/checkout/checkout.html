@@ -25,24 +25,26 @@
 {% block content %}
 
 <!-- Checkout -->
-<div class="container">
-    <div class="row">
-        <div class="col text-center">
+<div class="container txt-shadow">
+    <div class="row text-light">
+        <div class="col-12 w-100">
             <hr>
-            <h2 class="text-uppercase mb-4">Checkout</h2>
+            <h1 class="display-4 display-md-3 text-uppercase text-light text-center">Checkout</h1>
             <hr>
         </div>
     </div>
     <div class="row">
         <!-- Order Summary -->
         <div class="col-12 col-lg-6 order-lg-last mb-5">
-            <p class="text-muted">Purchase Summary</p>
+            <p class="fs-4">Purchase Summary</p>
             <div class="row">
-                <div class="col-6 offset-4">
-                    <p class="mb-2 mt-1 small text-muted">Plan</p>
+                <div class="col-6 text-center offset-4">
+                    <p class="mb-2 fs-5 mt-1">Plan</p>
+                    <hr>
                 </div>
                 <div class="col-2 text-right">
-                    <p class="mb-2 mt-1 small text-muted">Total</p>
+                    <p class="mb-2 fs-5 mt-1">Total</p>
+                    <hr>
                 </div>
             </div>
             {% for item in cart_items %}
@@ -57,10 +59,10 @@
                     </a>
                 </div>
                 <!-- Workout Details -->
-                <div class="col-6">
+                <div class="col-6 text-center">
                     <p class="my-0">{{ item.workout.name }}</p>
                     <p class="my-3 small">{{ item.workout.description }}</p>
-                    <p class="my-2 small text-muted">Duration: {{ item.workout.plan_duration }}</p>
+                    <p class="my-2 small">Duration: {{ item.workout.plan_duration }}</p>
                 </div>
                 <div class="col-2 text-right">
                     <p class="my-0">{{ item.workout.price }}</p>
@@ -68,7 +70,7 @@
             </div>
             {% endfor %}
             <hr class="my-0">
-            <div class="row text-dark text-right">
+            <div class="row text-right">
                 <div class="col-7 offet-2">
                     <p class="my-0">Total:</p>
                 </div>
@@ -78,19 +80,19 @@
             </div>
         </div>
         <!-- END Order Summary -->
-        <div class="col-12 col-lg-6">
-            <p class="text-muted">Please fill out this form to complete the purchase</p>
+        <div class="col-12 txt-shadow col-lg-6">
+            <p class="fs-5 ">Please fill out this form to complete the purchase</p>
             <!-- User details form -->
             <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                 {% csrf_token %}
                 <fieldset class="rounded-2 px-3 mb-5">
-                    <legend class="fieldset-label small text-dark px-2 w-auto">Details</legend>
+                    <legend class="fieldset-label small px-2 w-auto">Details</legend>
                     {{ order_form.full_name | as_crispy_field }}
                     {{ order_form.email | as_crispy_field }}
                     {{ order_form.phone_number | as_crispy_field }}
                 </fieldset>
                 <fieldset class="rounded-2 px-3 mb-5">
-                    <legend class="fieldset-label small text-dark px-2 w-auto">Address</legend>
+                    <legend class="fieldset-label small px-2 w-auto">Address</legend>
                     {{ order_form.street_address1 | as_crispy_field }}
                     {{ order_form.street_address2 | as_crispy_field }}
                     {{ order_form.town_or_city | as_crispy_field }}
@@ -105,15 +107,15 @@
                             checked>
                         {% else %}
                         <label for="id-save-info" class="form-check-label">
-                            <a href="{% url 'account_signup' %}" class="text-info">Create an account</a>
-                            <a href="{% url 'account_signup' %}" class="text-info">Login</a> to save these details
+                            <a href="{% url 'account_signup' %}" class="sign-in-link">Create an account</a>
+                            <a href="{% url 'account_signup' %}" class="sign-in-link">Login</a> to save these details
                         </label>
                         {% endif %}
                     </div>
                     <!-- END Create /login -->
                 </fieldset>
                 <fieldset class="px-3">
-                    <legend class="fieldset-label small text-dark px-2 w-auto">Payment</legend>
+                    <legend class="fieldset-label small px-2 w-auto">Payment</legend>
                     <!-- Stripe card payment -->
                     <div class="mb-3" id="card-element"></div>
                     <!-- END Stripe card payment -->
@@ -123,9 +125,9 @@
                     <input type="hidden" value={{ client_secret }} name="client_secret">
                     <!-- END Display form errors -->
                 </fieldset>
-                <div class="submit-button text-right mt-5 mb-2">
+                <div class="submit-button text-end mt-5 mb-2">
                     <!-- Back to cart -->
-                    <a href="{% url 'view_cart' %}" class="btn btn-outline-secondary rounded-2 my-3 me-3">
+                    <a href="{% url 'view_cart' %}" class="btn btn-back rounded-2 my-3 me-3">
                         <span class="icon">
                             <i class="fas fa-arrow-left"></i>
                         </span>
@@ -133,7 +135,7 @@
                     </a>
                     <!-- END Back to cart -->
                     <!-- Submit button -->
-                    <button id="submit-button" class="btn btn-outline-primary rounded-2">
+                    <button id="submit-button" class="btn btn-landing-page rounded-2">
                         <span class="icon">
                             <i class="fas fa-lock"></i>
                         </span>
