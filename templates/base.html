@@ -36,7 +36,7 @@
     <!-- Bootstrap 4 JS (temporary fix for toasts functionality) -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>    
+        crossorigin="anonymous"></script>
     <!-- Bootstrap 5 JS and Popper -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
         integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
@@ -143,17 +143,17 @@
     <div class="message-container">
         <!-- Django message level alerts -->
         {% for message in messages %}
-            {% with message.level as level %}
-                {% if level == 40 %}
-                    {% include 'includes/toasts/toast_error.html' %}
-                {% elif level == 30 %}
-                    {% include 'includes/toasts/toast_warning.html' %}
-                {% elif level == 25 %}
-                    {% include 'includes/toasts/toast_success.html' %}
-                {% else %}
-                    {% include 'includes/toasts/toast_info.html' %}
-                {% endif %}
-            {% endwith %}
+        {% with message.level as level %}
+        {% if level == 40 %}
+        {% include 'includes/toasts/toast_error.html' %}
+        {% elif level == 30 %}
+        {% include 'includes/toasts/toast_warning.html' %}
+        {% elif level == 25 %}
+        {% include 'includes/toasts/toast_success.html' %}
+        {% else %}
+        {% include 'includes/toasts/toast_info.html' %}
+        {% endif %}
+        {% endwith %}
         {% endfor %}
     </div>
     {% endif %}
@@ -186,9 +186,9 @@
                     <div class="footer-links">
                         <h5>Useful Links</h5>
                         <ul class="ps-0">
-                            <li><a class="footer-anchor" href="#">Home</a></li>
-                            <li><a class="footer-anchor" href="#">About</a></li>
-                            <li><a class="footer-anchor" href="#">Contact</a></li>
+                            <li><a class="footer-anchor" href="{% url 'home' %}">Home</a></li>
+                            <li><a class="footer-anchor" href="{% url 'about' %}">About</a></li>
+                            <li><a class="footer-anchor" href="{% url 'contact_form' %}">Contact</a></li>
                             <li><a class="footer-anchor" href="{% url 'account_login' %}">Login</a></li>
                             <li><a class="footer-anchor" href="{% url 'account_signup' %}">Register</a></li>
                         </ul>
@@ -210,8 +210,11 @@
                         <div class="footer-subscribe">
                             <p class="footer-text">Subscribe to get updates on blog posts, workouts and healthy eating
                             </p>
-                            <form action="">
-                                <input type="text" placeholder="Enter your Email">
+                            <form method="post" action="{% url 'subscribe_form' %}">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="email" name="email"
+                                        placeholder="Enter your email address">
                                 <button class="icon" type="submit"><i class="fas fa-envelope"
                                         aria-hidden="true"></i></button>
                             </form>
@@ -234,7 +237,7 @@
 
     <!-- Postload js block -->
     {% block postload_js %}
-    {{ block.super }}    
+    {{ block.super }}
     <script type="text/javascript">
         // show bootstrap 5 toast messages
         $('.toast').toast('show');

@@ -6,9 +6,6 @@ from django.http import HttpResponse
 from .forms import ContactForm
 
 
-#
-
-
 def contact_form(request):
     """A view to submit the form and send it to site owner"""
 

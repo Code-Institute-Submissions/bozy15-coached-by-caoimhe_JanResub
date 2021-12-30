@@ -93,7 +93,7 @@
                 <h2 class="text-uppercase mb-3">Reviews</h2>
                 <div class="reviews-container text-center">
                     <!-- Review card -->
-                    {% for review in reviews %}
+                    {% for review in reviews.all %}
                     <div class="card mt-5 rounded-2">
                         <div class="card-body">
                             <p class="small text-muted">By {{ review.user }} on {{ review.date|date:"d-m-y" }}</p>

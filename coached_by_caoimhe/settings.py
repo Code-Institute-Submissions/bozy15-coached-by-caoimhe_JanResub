@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     "profiles",
     "contact",
     "about",
+    "subscribe",
     # "django_extensions",
     "crispy_forms",
     "crispy_bootstrap5",
