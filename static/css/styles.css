@@ -116,16 +116,16 @@ hr {
 }
 
 .btn-landing-page {
-  background-color: var(--flickr-pink);
-  border-color: var(--vivid-sky-blue);
+  background-color: var(--vivid-sky-blue);
+  border-color: var(--flickr-pink);
   color: var(--font-colour);
   text-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.5);
   box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.5);
 }
 
 .btn-landing-page:hover {
-  background-color: var(--vivid-sky-blue);
-  border-color: var(--flickr-pink);
+  background-color: var(--flickr-pink);
+  border-color: var(--vivid-sky-blue);
   color: var(--font-colour);
   text-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.5);
   box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.5);
@@ -205,8 +205,8 @@ input[name="q"]::placeholder {
 }
 
 .btn-back {
-  background-color: var(--vivid-sky-blue);
-  border-color: var(--flickr-pink);
+  background-color: var(--flickr-pink);
+  border-color: var(--vivid-sky-blue);
   color: var(--font-colour);
   text-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.5);
   box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.5);
@@ -215,8 +215,8 @@ input[name="q"]::placeholder {
 .btn-back:hover,
 .btn-back:focus,
 .btn-back:active {
-  background-color: var(--flickr-pink);
-  border-color: var(--vivid-sky-blue);
+  background-color: var(--vivid-sky-blue);
+  border-color: var(--flickr-pink);
   color: var(--font-colour);
   text-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.5);
   box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.5);
@@ -399,7 +399,7 @@ iframe {
 
 /* Footer CSS */
 footer.footer {
-  background: #cdb4dbe8;
+  background: var(--eerie-black);
   border-top: 2px solid rgba(0, 0, 0, 0.6);
   color: var(--font-colour);
   text-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.5);
@@ -433,12 +433,12 @@ a.footer-anchor {
 .footer-anchor:focus {
   text-decoration: none;
   outline: none;
-  color: var(--orchid-pink);
+  color: var(--flickr-pink);
 }
 
 .footer-anchor.dev-name:hover {
   /* Changes the color on hover to blue to increase contrast */
-  color: var(--baby-blue-eyes);
+  color: var(--trypan-blue);
 }
 
 .about-footer .logo-footer {
@@ -460,7 +460,7 @@ a .fab.fa-instagram {
 
 i.fab.fa-instagram:hover,
 i.fab.fa-instagram:focus {
-  color: var(--orchid-pink);
+  color: var(--flickr-pink);
 }
 
 .footer-links h5 {
@@ -496,26 +496,29 @@ i.fab.fa-instagram:focus {
 
 .footer-links > .footer-subscribe form input::placeholder {
   color: var(--font-colour);
-  text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.8);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
   padding-left: 0.25rem;
 }
 
 .footer-links > .footer-subscribe form button {
-  color: var(--font-colour);
+  color: white;
   font-size: 1rem;
   position: absolute;
-  right: 0;
-  top: 0;
+  right: -10px;
+  top: -1px;
   height: 100%;
-  background: var(--uranian-blue);
+  background: var(--trypan-blue);
   border: none;
   border-radius: 0.25rem;
-  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.5);
+  padding-inline: 1.2rem;
+  border-radius: 4px;
+  padding-block: 1rem;
 }
 
 .footer-links > .footer-subscribe form button:hover,
 .footer-links > .footer-subscribe form button:focus {
-  color: var(--uranian-blue);
+  color: var(--flickr-pink);
   background: var(--font-colour);
 }
 /* End Footer CSS */
