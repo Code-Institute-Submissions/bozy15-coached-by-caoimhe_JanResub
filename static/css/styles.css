@@ -438,7 +438,7 @@ a.footer-anchor {
 
 .footer-anchor.dev-name:hover {
   /* Changes the color on hover to blue to increase contrast */
-  color: var(--trypan-blue);
+  color: var(--flickr-pink);
 }
 
 .about-footer .logo-footer {

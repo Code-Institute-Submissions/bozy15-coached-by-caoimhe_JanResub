@@ -221,5 +221,7 @@ def checkout_success(request, order_number):
     # Set the template and context
     # Then render template
     template = "checkout/checkout_success.html"
-    context = {"order": order}
+    context = {
+        "order": order,
+    }
     return render(request, template, context)
