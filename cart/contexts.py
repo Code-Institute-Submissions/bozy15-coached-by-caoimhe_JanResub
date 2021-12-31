@@ -1,4 +1,3 @@
-from django.conf import settings
 from django.shortcuts import get_object_or_404
 from workouts.models import Workout
 
@@ -20,7 +19,8 @@ def cart_contents(request):
         workout = get_object_or_404(Workout, pk=item_id)
         total += workout.price * quantity
         plan_count += quantity
-        # Add a dictionary to the cart_plan list, give access to all the workout details
+        # Add a dictionary to the cart_plan list, 
+        # give access to all the workout details
         cart_items.append(
             {
                 "item_id": item_id,

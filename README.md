@@ -2,8 +2,6 @@
 
 [Visit the live site here!](https://coached-by-caoimhe.herokuapp.com/)
 
-![Site preview](https://coach-me.herokuapp.com/static/media/coach-me-logo.png)
-
 ## Table of Contents
 
 1. [Overview](#overview)
@@ -70,7 +68,7 @@ The target audience for this site are for people who want to be able to buy work
 - To have previous purchases stored.
 - To have a secure way to pay for my workout plans.
 - To receive a confirmation email when I buy a workout plan.
-- To subscribe to the site and receive an email with the workout plan or information.
+- To subscribe to the site and so I can receive an email with information in the future.
 
 ##### As the Admin/Site owner, I want
 
@@ -287,11 +285,21 @@ Subscribe
 <details>
 <summary>Contact Us</summary>
 
-![Wireframe](media/wireframes/contact-us.png)
+![Wireframe](media/wireframes/contact.png)
 
 </details>
 
 <details>
+
+<details>
+<summary>About</summary>
+
+![Wireframe](media/wireframes/about.png)
+
+</details>
+
+<details>
+
 <summary>Error pages</summary>
 
 ![Wireframe](media/wireframes/error-pages.png)
