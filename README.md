@@ -290,8 +290,6 @@ Subscribe
 </details>
 
 <details>
-
-<details>
 <summary>About</summary>
 
 ![Wireframe](media/wireframes/about.png)
