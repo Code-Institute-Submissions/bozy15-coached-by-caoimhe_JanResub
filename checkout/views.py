@@ -182,7 +182,6 @@ def checkout_success(request, order_number):
     save_info = request.session.get("save_info")
     # Get order
     order = get_object_or_404(Order, order_number=order_number)
-
     # Get user if logged in
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)
