@@ -19,15 +19,9 @@ def subscribe_form(request):
         # Create an instance of the form
         form = SubscribeForm(request.POST)
         # Get all email values from database
-<<<<<<< HEAD
         email_list = Subscribe.objects.values_list("email", flat=True)
         # Check if the email is already in the database
         if request.POST["email"] in email_list:
-=======
-        email_list = Subscribe.objects.values_list('email', flat=True)
-        # Check if the email is already in the database
-        if request.POST['email'] in email_list:
->>>>>>> 357e30adfddba4f82f02edb0b67236e3454541ec
             messages.error(request, "You are already subscribed to our newsletter")
             return render(request, "home/index.html", {"form": form})
         # check if the form is valid
