@@ -12,6 +12,7 @@
      - [User Stories](#user-stories)
    - [Scope](#scope)
    - [Structure](#structure)
+     - [Database Schema](#database-schema)
    - [Wireframes](#wireframes)
    - [Surface](#surface)
      - [Typography](#typography)
@@ -98,6 +99,28 @@ Any features that are not included are optional and can be added later. Please c
 
 Below is a description of the structure of the site.
 **Note**: _The navbar and footer are included on all templates._
+
+#### Database Schema
+
+##### User Model
+
+The user model used for this site comes from `django.contrib.auth.models`
+
+During development, the database used was SQLite which is the default database for Django. Once the site was deployed to Heroku, the database was migrated to PostgreSQL.
+
+<details>
+<summary>Selected apps within the database</summary>
+
+![Schema](media/database-schema/custom-models.png)
+
+</details>
+
+<details>
+<summary>All apps within the database</summary>
+
+![Schema](media/database-schema/all-models.png)
+
+</details>
 
 #### Home App
 
@@ -747,6 +770,8 @@ If you need to save images to your S3 bucket, you will need to do the following;
 - Layout inspired by Bootstrap jumbotron, found [**here**](https://getbootstrap.com/docs/5.1/examples/jumbotron/).
 
 - How to add a functioning review form was from here [**here**](https://www.youtube.com/watch?v=Y5vvGQyHtpM).
+
+- How to draw database tables was found [**here**](https://django-extensions.readthedocs.io/en/latest/graph_models.html) and the website used to draw the tables was [**here**](https://dreampuf.github.io/GraphvizOnline/).
 
 ### Image
 
